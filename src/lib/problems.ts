@@ -37,6 +37,19 @@ export type Problem = {
   // 아니다. 대화형 claude 세션 터미널과는 별개 터미널에서 조용히 뜬다(포커스를 뺏지 않는다).
   autoStartCommand?: string | null;
   testCommand: string | null;
+  // "완료" 시점에 워크스페이스에서 실행해서, **참가자가 만든 산출물을 텍스트로 도식화**하는 명령(선택).
+  // stdout이 LLM 채점 프롬프트에 "산출물 요약" 블록으로 그대로 들어간다.
+  //
+  // 왜 필요한가(2026-08-14, 실측 사고): 채점자는 소스만 읽는다. 산출물이 `.xlsx`처럼 바이너리면
+  // 아예 못 보고, 자동 테스트는 체크리스트라 통과/실패만 갈린다. 그래서 `report-xlsx-staged`에서
+  // **엑셀이 객관적으로 더 깔끔한 산출물이 점수는 더 낮게** 나왔다 — 제목/머리글 굵기, 열 너비를
+  // 챙긴 쪽(스킬 사용)이 rubric 2.25~3.50, 테스트가 검사하는 열 하나만 넓힌 쪽이 4.00이었다.
+  // rubric 항목이 전부 코드 위생이라 "결과물이 보기 좋은가"에 점수를 줄 경로 자체가 없었다.
+  //
+  // calculator-web-staged에서 화면을 실제 브라우저로 열어 잰 것과 같은 처방이다 — **결과물을
+  // 실행/열어서 보여준다.** 코드가 아니라 산출물을 읽으므로 어떤 도구로 만들었는지에 중립적이다.
+  // 명령은 워크스페이스 루트에서 실행되고, stdout만 쓰며, 실패해도 채점 자체는 계속된다.
+  artifactSummaryCommand?: string | null;
   rubric: string[];
   // --- 사용량 하드컷 (2026-08-10 통합) ---
   //
@@ -89,6 +102,16 @@ export type Problem = {
   // 10% 넘긴 run이 92점). 곡선을 전역으로 가파르게 만들면 기준선이 사실상 통과 요건이 돼버려서
   // 다른 문제들의 기존 점수 체계가 통째로 흔들리므로, 문제별로 연다.
   tokenScoreZeroAtRatio?: number | null;
+  // LLM 채점 평균이 품질 0%에 닿는 **하한선**(선택). 없으면 전역 기본값 3.5(runDisplay.ts의
+  // JUDGE_SCORE_FLOOR).
+  //
+  // 왜 문제별인가 (2026-08-14, 실측): **채점자의 후함이 문제마다 다르다.** 같은 gpt-5.4-mini인데
+  //   - calculator-web-staged: 한 번에 만든 평범한 구현에 4.67
+  //   - report-xlsx-staged:    히든 20/20을 통과한 구현들에 3.00~3.80
+  // 로 분포가 통째로 어긋난다. 루브릭 문구가 요구하는 수준이 다르기 때문이지 산출물 수준의 차이가
+  // 아니다. 그래서 계산기에 맞춰 잡은 전역 3.5를 그대로 쓰면 xlsx 문제는 정상 산출물이 전부 0%가
+  // 된다. 하한선은 "그 문제의 채점자가 실제로 주는 점수 분포"에 맞춰야 한다.
+  judgeScoreFloor?: number | null;
   // 단계형 문제(staged)일 때만 채운다. 없으면(null/undefined) 기존처럼 prompt 하나로 끝나는
   // 단일 문제로 취급된다 — 기존 문제 포맷과 완전히 호환된다.
   stages?: ProblemStage[] | null;
@@ -150,6 +173,14 @@ export function loadProblem(id: string): Problem {
       // 같거나 크면 감점 구간의 폭이 0 이하가 되어 계산이 의미를 잃는다(0으로 나누기 포함).
       throw new Error(
         `${file}: targetDurationMs(${problem.targetDurationMs})는 maxDurationMs(${problem.maxDurationMs})보다 작아야 한다`,
+      );
+    }
+  }
+  if (problem.judgeScoreFloor != null) {
+    // 1 미만이면 채점 최저점(1)조차 0%가 안 되고, 5 이상이면 만점도 0%가 된다.
+    if (!(problem.judgeScoreFloor >= 1) || !(problem.judgeScoreFloor < 5)) {
+      throw new Error(
+        `${file}: judgeScoreFloor(${problem.judgeScoreFloor})는 1 이상 5 미만이어야 한다 (빼면 전역 기본값 3.5)`,
       );
     }
   }

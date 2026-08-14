@@ -254,6 +254,8 @@ export type OverallScoreInput = {
   // Problem.tokenScoreZeroAtRatio — 토큰효율 점수가 0에 도달하는 기준선 대비 배율.
   // 없으면 DEFAULT_TOKEN_SCORE_ZERO_AT_RATIO(=2)로 예전과 동일하게 동작한다.
   tokenScoreZeroAtRatio?: number | null;
+  // Problem.judgeScoreFloor — 채점 평균이 품질 0%에 닿는 하한선. 없으면 전역 JUDGE_SCORE_FLOOR.
+  judgeScoreFloor?: number | null;
   // 시간 감점용(2026-08-11). 셋 중 하나라도 없으면 시간 감점은 적용되지 않는다.
   durationMs?: number | null; // Run.durationMs — 세션 시작~"완료" 클릭까지의 벽시계 시간
   targetDurationMs?: number | null; // Problem.targetDurationMs — 이 시간을 넘으면 깎기 시작
@@ -326,9 +328,12 @@ export const DEFAULT_TOKEN_SCORE_ZERO_AT_RATIO = 2;
 export const JUDGE_SCORE_FLOOR = 3.5;
 
 // 채점 평균(1~5) → 품질 서브점수(0~100). 위 JUDGE_SCORE_FLOOR 주석 참고.
-export function judgeComponentFromAverage(judgeAvg: number): number {
-  const span = 5 - JUDGE_SCORE_FLOOR;
-  return Math.max(0, Math.min(1, (judgeAvg - JUDGE_SCORE_FLOOR) / span)) * 100;
+//
+// floor는 문제별로 덮어쓸 수 있다(Problem.judgeScoreFloor) — 같은 채점 모델이라도 루브릭 문구에
+// 따라 후함이 통째로 달라지기 때문이다(problems.ts의 해당 필드 주석에 실측 근거).
+export function judgeComponentFromAverage(judgeAvg: number, floor?: number | null): number {
+  const f = floor ?? JUDGE_SCORE_FLOOR;
+  return Math.max(0, Math.min(1, (judgeAvg - f) / (5 - f))) * 100;
 }
 
 function computeTokenComponent(
@@ -360,7 +365,8 @@ export function computeOverallScore(input: OverallScoreInput): OverallScoreResul
   // 없으면(이론상 없어야 하지만 방어적으로) 종합 점수 자체를 표시하지 않는다.
   const testComponent = testPassed === null ? null : testPassed ? 100 : 0;
   const judgeAvg = averageJudgeScore(judgeScores);
-  const judgeComponent = judgeAvg === null ? null : judgeComponentFromAverage(judgeAvg);
+  const judgeComponent =
+    judgeAvg === null ? null : judgeComponentFromAverage(judgeAvg, input.judgeScoreFloor);
 
   let qualityComponent: number;
   if (testComponent !== null && judgeComponent !== null) {

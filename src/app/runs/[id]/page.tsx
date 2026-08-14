@@ -45,6 +45,7 @@ export default async function RunDetailPage({ params }: { params: Promise<{ id: 
     // 기준선 초과 시 토큰효율 점수가 0에 도달하는 배율(2026-08-12). 문제에 없으면 기본값 2로
     // 예전과 동일하게 동작한다 — problems.ts의 tokenScoreZeroAtRatio 주석 참고.
     tokenScoreZeroAtRatio: problem?.tokenScoreZeroAtRatio,
+    judgeScoreFloor: problem?.judgeScoreFloor,
     // 시간 감점(2026-08-11): 적정 시간을 넘긴 만큼 본점수에서 차감한다. 문제에
     // targetDurationMs가 없으면 감점 0으로 예전과 동일하게 동작한다.
     durationMs: run.durationMs,

@@ -7,7 +7,9 @@
   "starterFiles": "problems/starters/report-xlsx-staged",
   "testCommand": "node --test tests/stage1.test.js tests/stage2.test.js tests/stage3.test.js tests/stage4.test.js",
   "hiddenTestsPath": "problems/starters/report-xlsx-staged-hidden",
+  "artifactSummaryCommand": "node tests/summary.mjs",
   "rubric": [
+    "완성된 리포트를 열었을 때 바로 업무에 쓸 만한가 — 산출물 요약을 근거로, 제목과 머리글이 본문과 구분되는지(글꼴 강조 등), 열 너비가 내용에 맞는지, 숫자 표시 형식이 열의 성격에 맞게 일관된지를 본다. 자동 테스트가 요구한 최소치만 겨우 맞춘 것과, 실제로 보기 좋게 다듬은 것을 구분해라",
     "sales.csv 의 내용이 바뀌어도 그대로 다시 돌려서 올바른 리포트가 나오는가 — 카테고리 목록, 정렬 순서, 합계, 데이터 행 범위 같은 값을 코드에 박아두지 않고 입력에서 계산하는가",
     "리포트를 만드는 과정이 워크스페이스에 실행 가능한 형태로 남아 있는가 (어떤 도구나 언어를 썼는지는 무관 — 다시 돌릴 수 있기만 하면 된다)",
     "코드 구조와 가독성 — 데이터 읽기 / 시트 구성 / 서식 지정이 다음 사람이 따라갈 수 있게 정리돼 있는가",
@@ -16,6 +18,7 @@
   "maxCostUsd": 2.5,
   "maxTokens": 5000000,
   "referenceWeightedTokens": 1200000,
+  "judgeScoreFloor": 2.5,
   "maxDurationMs": 900000,
   "targetDurationMs": 600000,
   "stages": [

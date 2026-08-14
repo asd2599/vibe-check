@@ -20,6 +20,9 @@ import type { Problem } from "./problems";
 
 const TEST_TIMEOUT_MS = 120_000; // 테스트 명령 자체가 걸리는 시간 상한(하드컷은 러너의 몫이 아니라 여기서 독립적으로 건다)
 const TEST_OUTPUT_MAX_CHARS = 4_000; // stdout+stderr truncate
+// Problem.artifactSummaryCommand 의 stdout 상한. 채점 프롬프트에서 소스 예산을 잡아먹지 않도록
+// 소스(60,000자)보다 훨씬 작게 잡는다 — 산출물 "도식"이지 덤프가 아니다.
+const ARTIFACT_SUMMARY_MAX_CHARS = 8_000;
 
 // 워크스페이스에서 채점자에게 보여줄 파일을 모을 때 제외하는 디렉터리(빌드 산출물/의존성/캐시).
 //
@@ -224,6 +227,36 @@ function collectProvidedInputHashes(problem: Problem): Map<string, string> {
   return map;
 }
 
+// Problem.artifactSummaryCommand 를 워크스페이스에서 돌려 산출물 도식(stdout)을 받아온다.
+// 실패/타임아웃이면 null — 채점 자체를 막지 않는다(테스트와 채점은 독립이라는 기존 원칙과 동일).
+export function collectArtifactSummary(
+  workspacePath: string,
+  command: string | null | undefined,
+): Promise<string | null> {
+  if (!command) return Promise.resolve(null);
+  return new Promise((resolve) => {
+    const child = spawn(command, { cwd: workspacePath, shell: true });
+    let out = "";
+    let settled = false;
+    const done = (value: string | null) => {
+      if (settled) return;
+      settled = true;
+      clearTimeout(timer);
+      resolve(value);
+    };
+    const timer = setTimeout(() => {
+      child.kill();
+      done(null);
+    }, TEST_TIMEOUT_MS);
+
+    child.stdout.on("data", (c: Buffer) => {
+      out += c.toString();
+    });
+    child.on("close", (code) => done(code === 0 && out.trim() ? out.slice(0, ARTIFACT_SUMMARY_MAX_CHARS) : null));
+    child.on("error", () => done(null));
+  });
+}
+
 // 워크스페이스의 최종 파일들을 "경로 헤더 + 내용" 형태의 단일 문자열로 모은다.
 // 진짜 git diff 인프라는 아직 없다(대시보드 페이즈에서 다룰 예정) — 지금은 최종 파일 전체로 충분하다.
 //
@@ -286,7 +319,28 @@ function collectWorkspaceSource(
   // 155KB인 반면 참가자가 실제로 짠 생성 스크립트는 712~1,770바이트였다. 크기순으로 채우면 그런
   // 스키마 파일은 자연히 뒤로 밀리고, 어디에 뒀든 실제 산출물이 먼저 들어간다(경로로 넘겨짚지
   // 않으므로 방법에 중립적이다).
-  candidates.sort((a, b) => a.content.length - b.content.length || a.rel.localeCompare(b.rel));
+  // **설치된 스킬 트리는 후순위로 민다(2026-08-14).** "작은 파일부터"만으로는 부족하다 — 큰 `.xsd`는
+  // 밀려나지만 공식 xlsx 스킬은 1~4KB짜리 파이썬 파일을 수십 개 딸고 오기 때문에 **개수로** 예산을
+  // 잠식한다. 실측(report-xlsx-staged, 셋 다 히든 20/20 통과): 프롬프트 60,000자 중 스킬이
+  // 48,754자(75%) / 37,776자(64%) / 0자를 차지했다.
+  //
+  // ⚠️ **다만 이게 그 run들의 낮은 점수 원인은 아니었다(확인함).** 잘려나간 파일을 실제로 열어보니
+  // 참가자 파일은 전부 들어가 있었고, 밀려난 건 스킬 자신의 validators와 `tests/xlsx.js`였다.
+  // 채점자가 "리포트 생성 로직이 안 보인다"고 쓴 run(cdab1ac8)은 **정말로 워크스페이스에 생성
+  // 스크립트가 하나도 없었다.** 진짜 원인은 따로 있다 — docs/evaluation.md의 "산출물을 아무도 안 본다"
+  // 절 참고. 이 정렬은 잠재적 잠식을 막는 방어일 뿐이고, 관측된 점수 차이를 설명하지 않는다.
+  //
+  // 고치는 방식은 **제외가 아니라 후순위**다. `.claude`를 통째로 제외했다가 되돌린 적이 있는데
+  // (위 EXCLUDED_DIRS 주석) 참가자 산출물이 거기 있는 경우가 실제로 있었기 때문이다. 후순위면
+  // 산출물이 어디 있든 예산이 남는 한 실리고, 2순위 안에서도 여전히 작은 것부터라 참가자가 손으로
+  // 쓴 스크립트(수백~수천 자)가 스킬 번들의 validators(1만~3만 자)보다 먼저 들어간다.
+  const isInstalledSkillAsset = (rel: string) => rel.startsWith(".claude/skills/");
+  candidates.sort(
+    (a, b) =>
+      Number(isInstalledSkillAsset(a.rel)) - Number(isInstalledSkillAsset(b.rel)) ||
+      a.content.length - b.content.length ||
+      a.rel.localeCompare(b.rel),
+  );
 
   // 내용이 잘리더라도 **파일 목록 전체**는 먼저 보여준다. 목록이 없으면 채점자가 "생성 로직이 아예
   // 없다"고 단정해버리는 오판이 생긴다(실측 사고 그대로).
@@ -343,6 +397,10 @@ export async function judgeWithOpenAI(
   // 문제가 제공한 파일들의 해시. 바이트가 그대로인 입력 파일을 채점 프롬프트에서 빼는 데 쓴다
   // (collectProvidedInputHashes 주석의 실측 사고 참고). 안 넘기면 예전 동작 그대로.
   providedInputs?: Map<string, string>,
+  // collectArtifactSummary()의 결과 — 참가자가 만든 **산출물 자체**를 텍스트로 도식화한 것.
+  // 소스만 보면 판단할 수 없는 "결과물이 쓸 만한가"를 여기서 본다(problems.ts의
+  // artifactSummaryCommand 주석에 실측 사고). 없으면 예전처럼 소스만 보고 채점한다.
+  artifactSummary?: string | null,
 ): Promise<JudgeResult> {
   const client = new OpenAI(); // OPENAI_API_KEY 환경변수를 그대로 사용
 
@@ -400,7 +458,13 @@ export async function judgeWithOpenAI(
       },
       {
         role: "user",
-        content: `루브릭:\n${rubricList}\n\n코드:\n${code}`,
+        content:
+          `루브릭:\n${rubricList}\n\n` +
+          (artifactSummary
+            ? `산출물 요약(참가자가 만든 결과물 파일을 그대로 열어 텍스트로 도식화한 것 — 코드가 아니라 ` +
+              `**결과물**이다. 결과물의 완성도를 묻는 루브릭 항목은 이걸 근거로 판단해라):\n${artifactSummary}\n\n`
+            : "") +
+          `코드:\n${code}`,
       },
     ],
     response_format: {
@@ -449,6 +513,11 @@ export async function evaluateRun(
   }
 
   const test = await runTests(result.workspacePath, problem.testCommand);
+  // 산출물 도식은 히든 테스트를 덮어쓴 **뒤에** 만든다 — 도식 스크립트도 tests/에 같이 실려오므로.
+  const artifactSummary = await collectArtifactSummary(
+    result.workspacePath,
+    problem.artifactSummaryCommand,
+  );
 
   let judge: JudgeResult | null = null;
   try {
@@ -457,6 +526,7 @@ export async function evaluateRun(
       problem.rubric,
       { ran: test.ran, passed: test.passed },
       collectProvidedInputHashes(problem),
+      artifactSummary,
     );
   } catch (err) {
     // LLM 채점 실패가 자동 테스트 결과 저장을 막으면 안 된다 — 두 축은 독립적으로 기록한다.
