@@ -311,6 +311,26 @@ function computeTimePenalty(
 // (problems.ts의 해당 필드 주석에 근거). 기본값은 2라서 지정하지 않은 문제는 동작이 완전히 같다.
 export const DEFAULT_TOKEN_SCORE_ZERO_AT_RATIO = 2;
 
+// LLM 채점 평균(1~5)을 품질 서브점수(0~100%)로 옮길 때 쓰는 **하한선**. 이 점수 이하면 0%,
+// 5.0이면 100%, 사이는 선형이다.
+//
+// 왜 그냥 `avg/5`가 아닌가 (2026-08-14, 실사용 실측): 채점자는 실제로 4~5에 몰린다. 저장된 완료
+// run 40여 건에서 테스트를 통과한 run의 rubric은 거의 전부 3.4~4.67 구간이었고, `avg/5`로는 이
+// 좁은 구간이 68~93%로 눌려서 **변별이 거의 안 생겼다.** 실사용 사례: 소넷으로 공학용 계산기를
+// 한 번에 만든 run(ef6e1ffc)이 rubric 4.67 / 723,019 가중 토큰으로 **97점**을 받았는데, 사용자가
+// "그 정도면 90점이 적당하다"고 판단했다. `avg/5`에서는 rubric 3.0(평범)조차 83점이 나온다.
+//
+// 3.5로 잡은 근거: 위 run이 정확히 91점이 되는 지점이다(요청 기준 "70만 토큰 · 채점 4.7 → 90점
+// 정도"). 이제 만점(5.0)에 가까울수록 100점에 붙고, 4.3 아래로 내려가면 다른 축이 완벽해도
+// 통과선(80점) 밑으로 떨어진다 — docs/evaluation.md의 재보정 절 참고.
+export const JUDGE_SCORE_FLOOR = 3.5;
+
+// 채점 평균(1~5) → 품질 서브점수(0~100). 위 JUDGE_SCORE_FLOOR 주석 참고.
+export function judgeComponentFromAverage(judgeAvg: number): number {
+  const span = 5 - JUDGE_SCORE_FLOOR;
+  return Math.max(0, Math.min(1, (judgeAvg - JUDGE_SCORE_FLOOR) / span)) * 100;
+}
+
 function computeTokenComponent(
   weightedTokens: number | null,
   referenceWeightedTokens: number | null | undefined,
@@ -340,7 +360,7 @@ export function computeOverallScore(input: OverallScoreInput): OverallScoreResul
   // 없으면(이론상 없어야 하지만 방어적으로) 종합 점수 자체를 표시하지 않는다.
   const testComponent = testPassed === null ? null : testPassed ? 100 : 0;
   const judgeAvg = averageJudgeScore(judgeScores);
-  const judgeComponent = judgeAvg === null ? null : (judgeAvg / 5) * 100;
+  const judgeComponent = judgeAvg === null ? null : judgeComponentFromAverage(judgeAvg);
 
   let qualityComponent: number;
   if (testComponent !== null && judgeComponent !== null) {
