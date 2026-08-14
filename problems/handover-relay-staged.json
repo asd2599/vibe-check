@@ -1,0 +1,72 @@
+{
+  "id": "handover-relay-staged",
+  "title": "퇴사자 인수인계 릴레이 (단계별 제출)",
+  "difficulty": "hard",
+  "category": "cli-tool",
+  "prompt": "[슬랙 DM - 박팀장]\n안녕하세요! 지난주 퇴사한 김주임 업무를 당분간 대신 봐주셔야 할 것 같아요 🙏\n김주임이 남긴 자료를 워크스페이스에 넣어놨는데, 급하게 나가느라 두서없이 적어놔서 좀 방대하고 뒤죽박죽이에요. 죄송해요, 그래도 필요한 값은 그 안에 다 들어있습니다.\n\n먼저 인프라팀 건부터요. 스테이징 환경 재배포를 해야 하는데 설정값이 헷갈려서요.\nhandover.md 보고 아래 세 개를 확정해서 워크스페이스 루트에 config.json으로 만들어주세요:\n{ \"stagingPort\": 숫자, \"dbSchema\": 문자열, \"retryLimit\": 숫자 }\n\n두 가지만 미리 말씀드릴게요.\n① 같은 항목이 문서 안에서 여러 번 나오는데, **뒤에 다시 적힌 게 최신**이라고 김주임이 문서 맨 앞에 적어놨어요. 나중 값이 우선입니다.\n② 운영이랑 로컬 값도 같이 적혀 있어요. 지금 필요한 건 **스테이징** 것뿐이니 헷갈리지 말아주세요.\n\n아 그리고 양해 부탁드려요 — 제가 여러 팀 요청을 모아서 넘겨드리는 자리라, 중간에 인프라랑 전혀 상관없는 다른 팀 건이 몇 번 끼어들 거예요. 그때그때 부탁드리고, 마지막에 다시 인프라 쪽으로 돌아옵니다.\n\n이거 확인되면 이어서 요청드릴게요 — 아래 \"이 단계 제출\"로 채점받아주세요!",
+  "starterFiles": "problems/starters/handover-relay-staged",
+  "testCommand": "npm test",
+  "hiddenTestsPath": "problems/starters/handover-relay-staged-hidden",
+  "rubric": [
+    "세 직무(인프라/결제/데이터)의 처리가 서로 뒤엉키지 않고 분리돼 있는가",
+    "마지막 단계에서 앞 단계 값을 다시 쓸 때, 이미 확정해둔 산출물을 재사용했는가 아니면 값을 새로 짜맞췄는가",
+    "코드 가독성"
+  ],
+  "maxCostUsd": 3.0,
+  "maxTokens": 12000000,
+  "referenceWeightedTokens": 1600000,
+  "tokenScoreZeroAtRatio": 1.5,
+  "maxDurationMs": 3600000,
+  "targetDurationMs": 2100000,
+  "stages": [
+    {
+      "index": 1,
+      "title": "1단계 게이트 (내부용, 화면에 노출되지 않음)",
+      "promptAddition": "",
+      "unlockPath": null,
+      "gateTestCommand": "node --test tests/stage1.test.js"
+    },
+    {
+      "index": 2,
+      "title": "2단계 [인프라팀]: 스테이징 나머지 + 운영 설정",
+      "promptAddition": "확인했습니다, 감사해요! 인프라 건 좀 더 있어요. 두 개 부탁드릴게요.\n\n**① config.json에 스테이징 값 세 개를 추가**해주세요:\n- stagingHost: 스테이징 호스트 이름 (문자열)\n- healthPath: 스테이징 헬스 체크 경로 (/ 로 시작하는 문자열)\n- cacheTtlSeconds: 스테이징 캐시 만료 시간 (초, 숫자)\n앞에 만들어주신 stagingPort/dbSchema/retryLimit은 그대로 두시고요.\n\n**② 운영 쪽 값도 따로 뽑아주세요.** 감사 자료로 \"스테이징이랑 운영이 어떻게 다른지\" 대조표를 내야 한다고 하네요. 워크스페이스 루트에 prod-config.json으로 아래 여섯 개를 넣어주세요:\n{ \"port\": 숫자, \"dbSchema\": 문자열, \"retryLimit\": 숫자, \"host\": 문자열, \"healthPath\": 문자열, \"cacheTtlSeconds\": 숫자 }\n운영 값은 문서에 한 번씩만 나올 거예요. 로컬 값은 안 쓰니 넣지 마시고요.\n\n스테이징 쪽은 여전히 여러 번 나오고 뒤에 적힌 게 최신입니다. 인프라 건은 일단 여기까지예요!",
+      "unlockPath": "problems/starters/handover-relay-staged-stage2",
+      "gateTestCommand": "node --test tests/stage1.test.js tests/stage2.test.js"
+    },
+    {
+      "index": 3,
+      "title": "3단계 [결제팀]: 실패 원인별 집계",
+      "promptAddition": "인프라 쪽은 여기까지고요! 말씀드린 대로 다른 팀 건이 들어왔어요 🙏 이번엔 결제팀이라 방금까지 하신 인프라 건이랑은 아무 상관 없습니다. handover.md도 안 보셔도 돼요.\n\npayments/tickets.md에 결제 실패 접수 대장이 있어요. 김주임이 접수될 때마다 적어둔 건데, 담당자마다 적는 방식이 달라서 **같은 원인인데 표기가 제각각**입니다.\n\n저희 시스템에 넣을 정식 코드는 이 다섯 개예요:\nCARD_LIMIT, EXPIRED_CARD, NETWORK_ERR, AUTH_FAIL, NO_FUNDS\n\n대장에 적힌 건 **띄어쓰기·하이픈·밑줄·대소문자만** 다른 것들이라, 그것만 무시하고 보면 전부 이 다섯 개 중 하나로 딱 떨어집니다. 표기가 다르다고 서로 다른 원인으로 세시면 안 돼요 — 합쳐서 세주셔야 합니다.\n\n워크스페이스 루트에 payment-causes.json으로, 정식 코드를 키로 건수를 넣어주세요.\n(예: { \"CARD_LIMIT\": 12, \"EXPIRED_CARD\": 8, ... }) 다섯 개 코드가 다 들어가야 합니다.",
+      "unlockPath": "problems/starters/handover-relay-staged-stage3",
+      "gateTestCommand": "node --test tests/stage1.test.js tests/stage2.test.js tests/stage3.test.js"
+    },
+    {
+      "index": 4,
+      "title": "4단계 [결제팀]: 담당팀별 집계",
+      "promptAddition": "감사합니다! 결제팀에서 하나만 더요. 같은 대장으로 담당팀별 집계만 부탁드려요.\n\n워크스페이스 루트에 payment-teams.json으로, 담당팀 이름을 키로 해서 각 팀마다\n{ \"count\": 그 팀이 받은 건수, \"totalAmount\": 그 팀 건들의 결제 금액 합계 }\n이렇게 넣어주세요.\n\n대장에 나오는 팀만 넣으시면 됩니다. 원인 코드는 여기선 안 봐도 돼요.\n결제팀 건은 이걸로 끝이에요!",
+      "unlockPath": "problems/starters/handover-relay-staged-stage4",
+      "gateTestCommand": "node --test tests/stage1.test.js tests/stage2.test.js tests/stage3.test.js tests/stage4.test.js"
+    },
+    {
+      "index": 5,
+      "title": "5단계 [데이터팀]: 접근 신청서 반려 대상",
+      "promptAddition": "결제팀 건 잘 받았습니다! 이번엔 데이터팀이에요 — 이것도 앞이랑 완전히 별개 건입니다 🙏\n\ndata/access-requests.md에 부서에서 올라온 데이터 접근 신청서가 모여 있어요. 서식이 몇 번 바뀌어서 항목 적힌 순서가 신청서마다 다릅니다.\n\n사내 규정에 어긋나는 신청서를 골라주셔야 하는데, 판정 순서가 정해져 있어요. **위에서부터 순서대로** 보시고 걸리는 게 있으면 거기서 판정이 끝납니다:\n\n① 목적이 **사내통계**면 다른 조건과 상관없이 **승인**입니다. (여기서 끝)\n② 개인정보가 **포함**인데 승인자 직급이 **팀장급**이면 **반려**. 본부장급·임원 승인은 통과예요.\n③ 조회 기간이 **90일을 초과**하면 반려. 정확히 90일은 통과입니다.\n④ 보관 기간이 **180일 이상**이면 반려. 정확히 180일도 반려예요. (③이랑 기준이 다르니 주의!)\n⑤ 위에 안 걸리면 승인.\n\n워크스페이스 루트에 rejected-requests.json으로 **반려 대상 신청서 id만** 배열로 담아주세요.\n(예: [\"REQ-2003\", \"REQ-2017\"])",
+      "unlockPath": "problems/starters/handover-relay-staged-stage5",
+      "gateTestCommand": "node --test tests/stage1.test.js tests/stage2.test.js tests/stage3.test.js tests/stage4.test.js tests/stage5.test.js"
+    },
+    {
+      "index": 6,
+      "title": "6단계 [데이터팀]: 부서별 집계",
+      "promptAddition": "좋아요! 데이터팀 마지막 건이에요. 방금 판정하신 결과로 부서별 집계만 하나 부탁드려요.\n\n워크스페이스 루트에 request-summary.json으로, 신청 부서 이름을 키로 해서 각 부서마다\n{ \"total\": 그 부서가 올린 신청서 총 건수, \"rejected\": 그중 반려된 건수 }\n이렇게 넣어주세요. 반려 판정은 방금 쓰신 규정 그대로입니다.\n\n데이터팀 건은 여기까지입니다, 감사합니다!",
+      "unlockPath": "problems/starters/handover-relay-staged-stage6",
+      "gateTestCommand": "node --test tests/stage1.test.js tests/stage2.test.js tests/stage3.test.js tests/stage4.test.js tests/stage5.test.js tests/stage6.test.js"
+    },
+    {
+      "index": 7,
+      "title": "7단계 [인프라팀 복귀]: 배포 체크리스트",
+      "promptAddition": "여러 팀 건 받아주시느라 고생 많으셨어요 🙏 마지막으로 처음의 인프라 건으로 돌아갑니다!\n\n이제 스테이징 재배포를 들어가려는데, 배포 전에 확인할 항목을 한 파일로 묶어달라고 하시네요.\n워크스페이스 루트에 deploy-checklist.json으로 아래 일곱 개를 넣어주세요:\n\n- healthCheckUrl: 앞에서 확정하신 스테이징 호스트/포트/헬스 경로를 합쳐서 \"http://호스트:포트헬스경로\" 형태로요. 사내망이라 https 아니고 http입니다. (예: http://어떤호스트:1234/어떤경로)\n- dbSchema / retryLimit / cacheTtlSeconds: 앞에서 확정하신 **스테이징** 값 그대로요.\n- prodDbSchema: 2단계에서 뽑아주신 **운영** DB 스키마요. 배포 전에 운영이랑 안 헷갈리게 같이 적어둔대요.\n- topCause: 결제팀 대장에서 **가장 많았던 원인 코드** 하나요. 배포 후에 그 케이스부터 모니터링한다고 하네요.\n- rollbackTag: 이건 아직 안 여쭤봤네요. 스테이징 롤백 기준 태그인데 handover.md에 적혀 있습니다 — 이것도 여러 번 나오고 뒤에 적힌 게 최신이에요.\n\n이것까지 되면 정말 끝입니다, 감사합니다!",
+      "unlockPath": "problems/starters/handover-relay-staged-stage7",
+      "gateTestCommand": "node --test tests/stage1.test.js tests/stage2.test.js tests/stage3.test.js tests/stage4.test.js tests/stage5.test.js tests/stage6.test.js tests/stage7.test.js"
+    }
+  ]
+}

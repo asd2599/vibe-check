@@ -1,0 +1,68 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+# .env.example은 비밀값이 없고(키는 전부 빈 값/주석) 처음 받는 사람이 필요한 환경변수를 알아야 하므로 커밋한다.
+!.env.example
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+/src/generated/prisma
+
+# vibecheck: local db (docs/architecture.md)
+/prisma/*.db
+/prisma/*.db-journal
+# 손으로 뜬 DB 백업(실행 기록이 들어있는 로컬 데이터)도 소스가 아니다.
+/prisma/*.db.bak*
+
+# vibecheck: 예전(자동 모드) 시절 프로젝트 안에 생성됐던 run 워크스페이스 잔재.
+# node_modules까지 통째로 들어있어 25MB가 넘는다 — 소스가 아니므로 올리지 않는다.
+/workspaces/
+
+# Windows에서 잘못된 리다이렉션(`2>nul`)으로 생기는 빈 파일/디렉터리 잔재.
+/nul
+/:TEMP
+
+# 사람마다 다른 로컬 권한 설정(claude 하네스). 공유 대상이 아니다.
+/.claude/settings.local.json
+# 이 저장소에 없는 /.agents/skills/ 를 가리키는 깨진 심볼릭 링크들.
+/.claude/skills/prisma-*
+
+# vibecheck: per-run isolated workspaces는 더 이상 이 프로젝트 디렉터리 안에 생성되지 않는다.
+# 기본적으로 프로젝트 밖(RUN_WORKSPACES_DIR, 기본값은 부모 디렉터리의 vibecheck-runs)에 생성되므로
+# 여기서 무시할 대상이 아니다 — docs/architecture.md 참고.

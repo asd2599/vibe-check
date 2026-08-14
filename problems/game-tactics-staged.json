@@ -1,0 +1,53 @@
+{
+  "id": "game-tactics-staged",
+  "title": "웹 턴제 전술 게임 (단계별 제출)",
+  "difficulty": "hard",
+  "category": "web-game",
+  "prompt": "[슬랙 DM - 게임팀 윤PD]\n안녕하세요! 사내 해커톤에 낼 격자 턴제 전술 게임 프로토타입 좀 부탁드려요 🙏\n브라우저에서 도는 웹 게임이고요, 워크스페이스에 `npm start` 하면 뜨는 정적 서버랑 빈 index.html 넣어뒀어요.\n\n중요한 게, 전투 로직은 반드시 `game.js` 한 파일에 **순수 함수**로 분리해주세요. 화면(DOM/렌더링) 코드가 거기 섞이면 안 돼요 — 저희가 그 파일만 따로 테스트 돌리거든요. index.html 쪽에서 그걸 import 해서 그리는 구조로요.\n\n`game.js` 가 export 해야 하는 것들이에요:\n- `createBattle(scenario)` → 초기 상태\n- `turnOrder(state)` → 이번 라운드 행동 순서 (살아있는 유닛 id 배열)\n- `legalMoves(state, unitId)` → 이동 가능한 칸 `[{x, y}, ...]`\n- `attackTargets(state, unitId)` → 공격 가능한 대상 id 배열\n- `applyAction(state, action)` → 새 상태 (원본은 절대 안 바뀌게요!)\n\n상태 모양은 이렇게 맞춰주세요:\n`state = { width, height, terrain, units, order, current, round, winner }`\n- `terrain[y][x]` 는 `\"plain\"` / `\"wall\"` 문자열 (다음 단계에서 종류가 늘어요)\n- `units` 에는 **살아있는 유닛만** 남습니다\n- `order` 는 이번 라운드 행동 순서, `current` 는 지금 행동할 유닛 id, `round` 는 1부터, `winner` 는 `null` / `\"ally\"` / `\"enemy\"`\n- 유닛은 시나리오에 준 필드(`id, team, x, y, hp, maxHp, atk, def, spd, move, range`)에 `hasMoved`, `hasAttacked` 를 더해서 들고 있어주세요 (`maxHp` 가 시나리오에 없으면 `hp` 로)\n\n액션은 세 가지예요: `{type:\"move\", unitId, x, y}` / `{type:\"attack\", unitId, targetId}` / `{type:\"end\", unitId}`\n\n그리고 저희 팀 룰이 흔한 SRPG랑 좀 달라요. 이것만 꼭 지켜주세요:\n① 데미지 = `floor(atk × atk ÷ (atk + def))`, 최소 1. (빼기 공식 아니에요!)\n② 턴 순서 = `spd` 내림차순 → 동점이면 **적군(enemy)이 먼저** → 그래도 동점이면 `id` 사전순 오름차순. 순서는 라운드 시작에 확정하고 그 라운드 동안 유지하되, 중간에 죽은 유닛은 건너뜁니다.\n③ 이동은 상하좌우 4방향만. 벽은 물론이고 **다른 유닛이 서 있는 칸은 아군이라도 지나갈 수 없어요.** 이동 비용 합이 `move` 이하인 칸까지 갈 수 있습니다.\n④ 공격 사거리는 **맨해튼 거리** ≤ `range`. 벽이나 다른 유닛이 사이에 있어도 상관없어요, 시야 판정 안 합니다.\n⑤ 한 턴에 이동 한 번, 공격 한 번인데 **순서가 고정이에요 — 이동 후 공격은 되지만 공격하고 나면 그 턴엔 못 움직입니다.**\n⑥ `hp` 가 0 이하면 즉시 `units` 에서 제거하고, 한쪽 팀이 전멸하면 `winner` 를 채워주세요.\n⑦ 규칙에 어긋나는 액션(사거리 밖, 이동력 밖, 자기 턴이 아닌 유닛 등)은 `Error` 를 던져주세요.\n⑧ `legalMoves` 는 현재 서 있는 칸을 빼고 `y` → `x` 오름차순으로, `attackTargets` 는 `id` 오름차순으로 정렬해서 주세요.\n\n화면은 이번 단계에선 격자랑 유닛이 보이고, 클릭으로 이동/공격해서 한 판이 굴러가면 충분해요. 적 팀은 아무렇게나 자동으로 움직여도 되는데 무작위 말고 규칙적이면 좋겠어요(테스트가 결정론적이어야 해서요).\n\n미리 말씀드리면 이거 총 4단계로 나눠서 드릴 거고, **한 번 정한 규칙은 뒤 단계에서도 계속 그대로 유효해요.** 뒤에서 지형, 상태이상, 궁극기가 붙는데 앞 규칙 위에 얹히는 식이라 나중에 앞 규칙이 깨지면 앞 단계 테스트부터 다시 빨개집니다. 그 점 감안해서 작업해주시면 좋겠어요!\n\n`npm test` 로 확인하실 수 있고, 되면 아래 \"이 단계 제출\"로 부탁드려요.",
+  "starterFiles": "problems/starters/game-tactics-staged",
+  "testCommand": "node --test tests/stage1.test.js tests/stage2.test.js tests/stage3.test.js tests/stage4.test.js",
+  "hiddenTestsPath": "problems/starters/game-tactics-staged-hidden",
+  "rubric": [
+    "각 단계의 비관습 규칙을 정확히 반영했는가 (제곱 데미지 공식, 동점 시 적군 우선, 아군 통과 불가, 맨해튼 사거리, 지형 보정 순서, 독 하한과 지형 미적용, 궁극기 발동 조건)",
+    "뒤 단계 작업이 앞 단계 규칙을 깨뜨리지 않았는가 — 특히 궁극기 데미지가 지형 보정을 대상별로 다시 타는지",
+    "웹 화면이 실제로 게임으로 동작하는가 (격자·유닛 표시, 클릭으로 이동/공격, 턴 진행, 승패 표시)",
+    "시각적 완성도 — 지형 종류, hp, 상태이상, 게이지, 행동 순서가 화면에서 구분되는가",
+    "game.js 가 렌더링과 분리된 순수 함수로 유지됐는가 (DOM 접근이 섞이지 않았는가)",
+    "코드 가독성"
+  ],
+  "maxCostUsd": 3.0,
+  "maxTokens": 6000000,
+  "referenceWeightedTokens": 1400000,
+  "maxDurationMs": 3000000,
+  "targetDurationMs": 1800000,
+  "stages": [
+    {
+      "index": 1,
+      "title": "1단계 게이트 (내부용, 화면에 노출되지 않음)",
+      "promptAddition": "",
+      "unlockPath": null,
+      "gateTestCommand": "node --test tests/stage1.test.js"
+    },
+    {
+      "index": 2,
+      "title": "2단계: 지형",
+      "promptAddition": "확인했습니다, 좋아요! 이제 지형을 넣을게요. 테스트 시나리오 추가해뒀습니다.\n`terrain` 문자열에 `\"forest\"` 와 `\"water\"` 가 추가됩니다.\n\n이동 비용은 평지 1, 숲 2, 물 3이에요(벽은 여전히 통과 불가). `move` 는 그대로 비용 합 기준입니다.\n\n전투 보정이 두 개 붙는데, 이게 좀 헷갈리니까 정확히 말씀드릴게요:\n- **숲에 서 있는 쪽이 공격을 받으면** 받는 데미지가 25% 줄어요 → `floor(데미지 × 0.75)`, 최소 1.\n- **물에 서 있는 쪽이 공격을 하면** 데미지가 1 줄어요 → `데미지 - 1`, 최소 1.\n- 헷갈리기 쉬운 부분: 숲은 **방어하는 쪽** 지형만 보고, 물은 **공격하는 쪽** 지형만 봅니다. 반대는 아무 영향 없어요.\n- 그리고 **적용 순서가 결과를 바꿉니다.** 반드시 `1단계 기본 공식` → `숲 보정` → `물 보정` 순서로 계산해주세요. 순서가 바뀌면 값이 달라지는 케이스가 테스트에 들어있어요.\n\n화면에도 지형이 구분돼 보이면 좋겠어요.",
+      "unlockPath": "problems/starters/game-tactics-staged-stage2",
+      "gateTestCommand": "node --test tests/stage1.test.js tests/stage2.test.js"
+    },
+    {
+      "index": 3,
+      "title": "3단계: 독 상태이상",
+      "promptAddition": "잘 되네요! 이번엔 상태이상 하나만 추가할게요. 시나리오 또 넣어뒀습니다.\n\n유닛에 `venom: true` 가 붙은 애들이 있는데, 얘가 공격해서 데미지가 들어가면 대상이 독에 걸립니다.\n유닛의 `poisonTurns` 필드로 관리해주세요 (기본 0, 시나리오에 값이 있으면 그게 초기값이에요).\n\n규칙은 이래요:\n- 독에 걸리면 `poisonTurns` 를 **3으로 설정**합니다. 이미 걸려 있어도 누적이 아니라 3으로 덮어써주세요.\n- 독 피해는 **그 유닛의 턴이 시작될 때** `floor(maxHp × 0.1)`, 최소 1 만큼 들어갑니다. (현재 hp 가 아니라 maxHp 기준이에요)\n- 독 피해에는 **지형 보정을 적용하지 않습니다.** 숲에 서 있어도 독은 그대로 다 들어와요.\n- 그리고 이게 제일 중요한데, **독으로는 죽지 않습니다.** hp 가 1 밑으로 내려가면 1에서 멈춰요. 독 때문에 유닛이 `units` 에서 사라지면 안 됩니다.\n- `poisonTurns` 는 **그 유닛의 턴이 끝날 때** 1씩 줄어듭니다. 그래서 3턴이면 피해를 총 3번 받아요.\n\n화면에 독 걸린 유닛이 표시되면 좋겠습니다.",
+      "unlockPath": "problems/starters/game-tactics-staged-stage3",
+      "gateTestCommand": "node --test tests/stage1.test.js tests/stage2.test.js tests/stage3.test.js"
+    },
+    {
+      "index": 4,
+      "title": "4단계: 궁극기 게이지",
+      "promptAddition": "마지막이에요! 궁극기 넣고 끝냅시다 🙏 시나리오 마지막으로 추가했어요.\n\n모든 유닛이 `gauge` 를 가집니다 (0~100, 기본 0, 시나리오에 값이 있으면 초기값).\n- **공격을 받으면** `gauge` 가 10 오릅니다 (최대 100). 때린 쪽은 안 올라요.\n- **독 피해로는 게이지가 오르지 않습니다.** 직접 맞은 것만 쳐요.\n\n발동은 자동이에요. **자기 턴이 시작될 때 `gauge` 가 100이면** 그 턴은 궁극기를 씁니다:\n- 대상은 **자기 위치에서 맨해튼 거리 2 이내에 있는 적 전원**이에요.\n- 대상이 한 명도 없으면 **발동하지 않고 게이지를 그대로 유지합니다.** 이 경우엔 평소처럼 이동/공격하면 돼요.\n- 발동하면 대상 한 명 한 명에 대해 **1단계 공식 → 2단계 지형 보정(숲/물)을 그대로 다 태운 다음**, 마지막에 `× 1.5` 하고 버림합니다 (최소 1). 지형 보정은 대상마다 각각 계산해주세요 — 서 있는 칸이 다 다르니까요.\n- 궁극기에 맞은 쪽도 게이지는 똑같이 10 오릅니다.\n- 발동하고 나면 `gauge` 는 0이 되고, **그 턴엔 이동도 공격도 못 해요** (`end` 만 가능합니다).\n\n턴 시작 처리 순서도 정해둘게요: **독 피해가 먼저, 그 다음에 게이지 확인**입니다.\n\n화면에 게이지 바 보이면 좋고요, 궁극기 터질 때 티가 나면 더 좋습니다. 이것까지 되면 끝이에요, 고생하셨습니다!",
+      "unlockPath": "problems/starters/game-tactics-staged-stage4",
+      "gateTestCommand": "node --test tests/stage1.test.js tests/stage2.test.js tests/stage3.test.js tests/stage4.test.js"
+    }
+  ]
+}

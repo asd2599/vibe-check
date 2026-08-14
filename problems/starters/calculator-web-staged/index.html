@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>계산기</title>
+    <style>
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+        background: #f4f4f5;
+        color: #18181b;
+      }
+    </style>
+  </head>
+  <body>
+    <main id="app">
+      <h1>Hello World</h1>
+      <p>이 페이지가 보이면 서버는 정상입니다.</p>
+
+      <!-- 계산 결과는 이 요소 안에 값만 텍스트로 넣어주세요. -->
+      <div id="result"></div>
+    </main>
+
+    <script type="module">
+      import { evaluate } from "./calc.js";
+
+      // 화면은 여기서 만들어 나가시면 됩니다. 계산 자체는 calc.js 의 evaluate() 로 넘기세요.
+      console.log("evaluate('1+1') =", evaluate("1+1"));
+    </script>
+  </body>
+</html>

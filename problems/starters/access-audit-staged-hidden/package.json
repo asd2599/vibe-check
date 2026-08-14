@@ -1,0 +1,9 @@
+{
+  "name": "access-audit-staged-workspace",
+  "private": true,
+  "version": "0.0.0",
+  "description": "접근 로그 감사 워크스페이스 (node audit.js data)",
+  "scripts": {
+    "test": "node --test tests/*.test.js"
+  }
+}

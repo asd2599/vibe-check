@@ -1,0 +1,82 @@
+{
+  "width": 4,
+  "height": 3,
+  "terrain": [
+    [
+      "plain",
+      "plain",
+      "plain",
+      "plain"
+    ],
+    [
+      "forest",
+      "plain",
+      "plain",
+      "plain"
+    ],
+    [
+      "plain",
+      "plain",
+      "plain",
+      "plain"
+    ]
+  ],
+  "units": [
+    {
+      "id": "a1",
+      "team": "ally",
+      "x": 0,
+      "y": 1,
+      "hp": 30,
+      "maxHp": 40,
+      "atk": 10,
+      "def": 5,
+      "spd": 9,
+      "move": 0,
+      "range": 1,
+      "poisonTurns": 3
+    },
+    {
+      "id": "a2",
+      "team": "ally",
+      "x": 1,
+      "y": 1,
+      "hp": 3,
+      "maxHp": 50,
+      "atk": 10,
+      "def": 5,
+      "spd": 8,
+      "move": 0,
+      "range": 1,
+      "poisonTurns": 2
+    },
+    {
+      "id": "a3",
+      "team": "ally",
+      "x": 2,
+      "y": 1,
+      "hp": 40,
+      "maxHp": 40,
+      "atk": 10,
+      "def": 5,
+      "spd": 2,
+      "move": 0,
+      "range": 1,
+      "poisonTurns": 1
+    },
+    {
+      "id": "e1",
+      "team": "enemy",
+      "x": 3,
+      "y": 1,
+      "hp": 40,
+      "maxHp": 40,
+      "atk": 10,
+      "def": 5,
+      "spd": 1,
+      "move": 0,
+      "range": 1,
+      "venom": true
+    }
+  ]
+}

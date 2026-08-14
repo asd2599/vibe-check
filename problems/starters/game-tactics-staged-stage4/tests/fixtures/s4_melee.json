@@ -1,0 +1,165 @@
+{
+  "width": 9,
+  "height": 7,
+  "terrain": [
+    [
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain"
+    ],
+    [
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "wall",
+      "plain",
+      "plain",
+      "plain",
+      "plain"
+    ],
+    [
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "wall",
+      "plain",
+      "plain",
+      "plain",
+      "plain"
+    ],
+    [
+      "plain",
+      "plain",
+      "plain",
+      "forest",
+      "plain",
+      "forest",
+      "plain",
+      "plain",
+      "plain"
+    ],
+    [
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "water",
+      "plain",
+      "plain",
+      "plain",
+      "plain"
+    ],
+    [
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain"
+    ],
+    [
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain"
+    ]
+  ],
+  "units": [
+    {
+      "id": "a1",
+      "team": "ally",
+      "x": 1,
+      "y": 3,
+      "hp": 70,
+      "maxHp": 70,
+      "atk": 13,
+      "def": 6,
+      "spd": 8,
+      "move": 3,
+      "range": 1
+    },
+    {
+      "id": "a2",
+      "team": "ally",
+      "x": 1,
+      "y": 1,
+      "hp": 60,
+      "maxHp": 60,
+      "atk": 11,
+      "def": 5,
+      "spd": 6,
+      "move": 3,
+      "range": 2,
+      "venom": true
+    },
+    {
+      "id": "a3",
+      "team": "ally",
+      "x": 1,
+      "y": 5,
+      "hp": 66,
+      "maxHp": 66,
+      "atk": 12,
+      "def": 8,
+      "spd": 4,
+      "move": 3,
+      "range": 1
+    },
+    {
+      "id": "e1",
+      "team": "enemy",
+      "x": 7,
+      "y": 3,
+      "hp": 70,
+      "maxHp": 70,
+      "atk": 13,
+      "def": 6,
+      "spd": 8,
+      "move": 3,
+      "range": 1
+    },
+    {
+      "id": "e2",
+      "team": "enemy",
+      "x": 7,
+      "y": 1,
+      "hp": 60,
+      "maxHp": 60,
+      "atk": 12,
+      "def": 5,
+      "spd": 6,
+      "move": 3,
+      "range": 2,
+      "venom": true
+    },
+    {
+      "id": "e3",
+      "team": "enemy",
+      "x": 7,
+      "y": 5,
+      "hp": 66,
+      "maxHp": 66,
+      "atk": 11,
+      "def": 8,
+      "spd": 4,
+      "move": 3,
+      "range": 1
+    }
+  ]
+}

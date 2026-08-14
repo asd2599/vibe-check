@@ -1,0 +1,52 @@
+{
+  "id": "access-audit-staged",
+  "title": "접근 로그 감사 리포트 (단계별 제출)",
+  "difficulty": "hard",
+  "category": "log-analysis",
+  "prompt": "[슬랙 DM - 보안팀 한과장]\n안녕하세요! 접근 로그 감사 자동화 좀 부탁드릴게요 🙏\n워크스페이스 data/ 폴더에 서버 접근 로그를 넣어뒀어요. 한 줄이 요청 하나고 파이프(|)로 구분돼 있어요:\n시각|사용자ID|메서드와경로|상태코드|응답시간|User-Agent\n\n실행은 node audit.js data 형태로 하고, 표준출력 마지막 줄에 JSON 한 줄로 결과를 주세요.\n일단 첫 단계는 { \"totalRequests\": 총요청수, \"successRate\": 성공률 } 두 개만요(필드명 꼭 이대로요!).\n\n근데 저희 팀 집계 규칙이 일반적인 거랑 좀 달라서 이것만 꼭 지켜주세요:\n① 성공 판정 — 2xx는 당연히 성공이고, 499(클라이언트가 먼저 끊은 것)도 저희는 성공으로 칩니다. 대신 3xx는 성공이 아니라 실패로 잡아주세요. 리다이렉트가 뜬다는 건 저희 쪽 라우팅이 잘못됐다는 뜻이라 감사에서는 실패로 봐요.\n② 봇 제외 — User-Agent는 믿지 마세요, 요즘 다 위장해서 와요. 대신 같은 사용자ID가 어느 시점이든 1초(1000ms) 이내에 3건 이상 요청한 적이 있으면 그 사용자는 봇으로 보고 그 사용자의 요청을 전부 집계에서 빼주세요(일부만 빼는 게 아니라 그 사람 기록 통째로요).\n③ successRate는 백분율인데 반올림 말고 소수점 첫째 자리까지 버림해주세요(예: 69.98이면 69.9).\n\n아 그리고 미리 말씀드리면 이거 하루치로 끝나는 게 아니라 며칠치가 계속 추가될 거고, 집계 관점도 몇 개 더 붙을 예정이에요. 로그 양이 꽤 되니까 그 부분 감안해서 작업해주시면 좋을 것 같아요!\n일단 여기까지 되면 아래 \"이 단계 제출\"로 확인 부탁드려요.",
+  "starterFiles": "problems/starters/access-audit-staged",
+  "testCommand": "npm test",
+  "hiddenTestsPath": "problems/starters/access-audit-staged-hidden",
+  "rubric": [
+    "각 단계의 사내 집계 규칙(499=성공/3xx=실패, 1초 3건 봇 제외, 7분 세션, p90 nearest-rank 버림, 이상 사용자 기준)을 정확히 반영했는가",
+    "채팅으로만 전달된 규칙을 놓치지 않고 유지했는가 — 별도 규칙 문서가 워크스페이스에 없다",
+    "뒤 단계 작업이 앞 단계 규칙을 깨뜨리지 않았는가(누적 게이트가 걸러내지 못한 미묘한 회귀 포함)",
+    "단계가 쌓이며 코드가 전면 재작성 없이 확장 가능한 구조인가(파싱/필터/집계 관심사 분리)",
+    "코드 가독성"
+  ],
+  "maxCostUsd": 2.0,
+  "maxTokens": 4000000,
+  "referenceWeightedTokens": 900000,
+  "maxDurationMs": 1500000,
+  "targetDurationMs": 900000,
+  "stages": [
+    {
+      "index": 1,
+      "title": "1단계 게이트 (내부용, 화면에 노출되지 않음)",
+      "promptAddition": "",
+      "unlockPath": null,
+      "gateTestCommand": "node --test tests/stage1.test.js"
+    },
+    {
+      "index": 2,
+      "title": "2단계: 세션 집계",
+      "promptAddition": "확인했습니다, 감사해요! 로그 하루치 더 넣어드렸어요(data/에 파일 추가됐습니다) — 앞으로도 계속 늘어날 거라 audit.js는 data 폴더 안 로그를 전부 훑도록 되어 있어야 해요.\n\n이번엔 세션 수를 같이 보고 싶어요. 출력에 sessionCount 필드를 추가해주세요(기존 필드는 그대로 두시고요).\n세션 정의가 저희는 좀 짧아요 — 같은 사용자의 인접한 두 요청 사이 간격이 7분을 **초과**하면 거기서 세션이 끊긴 걸로 봅니다. 정확히 7분(420초)이면 아직 같은 세션이에요, 초과여야 새 세션입니다. 사용자별로 세션 수를 세서 전부 합한 값이 sessionCount예요.\n봇 제외는 세션 계산에도 똑같이 적용됩니다(봇으로 판정된 사용자는 세션도 안 셉니다).",
+      "unlockPath": "problems/starters/access-audit-staged-stage2",
+      "gateTestCommand": "node --test tests/stage1.test.js tests/stage2.test.js"
+    },
+    {
+      "index": 3,
+      "title": "3단계: 엔드포인트별 응답시간",
+      "promptAddition": "좋아요! 로그 또 하루치 추가했습니다.\n이번엔 느린 엔드포인트를 찾고 싶어요. 출력에 p90ByEndpoint 필드를 추가해주세요 — 키는 로그의 '메서드와경로' 문자열 그대로(예: \"GET /api/orders\"), 값은 그 엔드포인트 응답시간의 p90입니다.\n\np90 계산 방식이 팀마다 달라서 저희 기준을 정확히 알려드릴게요: 해당 엔드포인트 응답시간을 오름차순 정렬한 다음 nearest-rank 방식으로 ceil(0.9 × 건수)번째 값을 씁니다(1부터 세는 순번이에요). 보간(interpolation) 하지 마시고요. 값에 소수점이 생기면 버림입니다.\n여기도 봇 제외는 동일하게 적용해주세요.",
+      "unlockPath": "problems/starters/access-audit-staged-stage3",
+      "gateTestCommand": "node --test tests/stage1.test.js tests/stage2.test.js tests/stage3.test.js"
+    },
+    {
+      "index": 4,
+      "title": "4단계: 이상 사용자 추출",
+      "promptAddition": "마지막이에요! 로그 마지막 하루치 넣었습니다.\n출력에 anomalousUsers 필드를 추가해주세요 — 사용자ID 배열이고, 조건은 두 개를 **모두** 만족하는 사용자입니다: 세션 수가 5개 이상이면서, 그 사용자의 성공률이 70% 미만인 경우요.\n여기서 성공률은 1단계 성공 판정 규칙(2xx와 499는 성공, 3xx 포함 나머지는 실패)을 그대로 쓰고, 사용자별로 계산합니다. 70% 미만이니까 정확히 70%면 해당 없음이에요.\n순서는 상관없어요. 봇으로 판정된 사용자는 여기서도 빠집니다.\n이것까지 되면 끝입니다, 정말 감사합니다 🙏",
+      "unlockPath": "problems/starters/access-audit-staged-stage4",
+      "gateTestCommand": "node --test tests/stage1.test.js tests/stage2.test.js tests/stage3.test.js tests/stage4.test.js"
+    }
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "id": "report-xlsx-staged",
+  "title": "매출 엑셀 리포트 (단계별 제출)",
+  "difficulty": "medium",
+  "category": "report",
+  "prompt": "[슬랙 DM - 영업지원팀 김대리]\n안녕하세요! 이번 분기 매출 정리해서 엑셀 리포트 하나 만들어주실 수 있을까요? 🙏\n데이터는 워크스페이스에 `data/sales.csv` 로 넣어놨어요 (날짜, 카테고리, 상품명, 수량, 단가).\n\n결과물은 `output/report.xlsx` 로 부탁드려요. 총 4단계로 나눠서 요청드릴 건데, 우선 1단계부터요.\n\n**1단계 — \"상세\" 시트에 원본 쭉 나열**\n- 시트 이름은 정확히 `상세` 로요.\n- **1행은 비워두세요.** 나중에 거기 제목 넣을 거예요.\n- 2행이 머리글이고, 순서는 `날짜 / 카테고리 / 상품명 / 수량 / 단가 / 금액` 이렇게 여섯 칸이요.\n- 3행부터 데이터가 들어가면 됩니다. csv 에 있는 순서 그대로요.\n- 날짜는 csv 에 적힌 그대로 **텍스트**로 넣어주세요 (날짜 값으로 변환하지 말고요 — 저희 쪽에서 다른 시스템에 붙여넣을 때 자꾸 깨져서요).\n- 수량, 단가는 **숫자**로요. `금액` 칸은 csv 에 없는데, `수량 × 단가` 로 계산해서 넣어주시면 됩니다.\n\n확인은 `npm test` 로 하시면 되고, 되면 아래 \"이 단계 제출\" 눌러주세요. 감사합니다!",
+  "starterFiles": "problems/starters/report-xlsx-staged",
+  "testCommand": "node --test tests/stage1.test.js tests/stage2.test.js tests/stage3.test.js tests/stage4.test.js",
+  "hiddenTestsPath": "problems/starters/report-xlsx-staged-hidden",
+  "rubric": [
+    "sales.csv 의 내용이 바뀌어도 그대로 다시 돌려서 올바른 리포트가 나오는가 — 카테고리 목록, 정렬 순서, 합계, 데이터 행 범위 같은 값을 코드에 박아두지 않고 입력에서 계산하는가",
+    "리포트를 만드는 과정이 워크스페이스에 실행 가능한 형태로 남아 있는가 (어떤 도구나 언어를 썼는지는 무관 — 다시 돌릴 수 있기만 하면 된다)",
+    "코드 구조와 가독성 — 데이터 읽기 / 시트 구성 / 서식 지정이 다음 사람이 따라갈 수 있게 정리돼 있는가",
+    "입력이 어긋나는 상황(파일·디렉터리 없음, 빈 데이터, 예상 밖의 값)에 대한 대비가 있는가"
+  ],
+  "maxCostUsd": 2.5,
+  "maxTokens": 5000000,
+  "referenceWeightedTokens": 1200000,
+  "maxDurationMs": 900000,
+  "targetDurationMs": 600000,
+  "stages": [
+    {
+      "index": 1,
+      "title": "1단계 게이트 (내부용, 화면에 노출되지 않음)",
+      "promptAddition": "",
+      "unlockPath": null,
+      "gateTestCommand": "node --test tests/stage1.test.js"
+    },
+    {
+      "index": 2,
+      "title": "2단계: 요약 시트 (합계)",
+      "promptAddition": "네 확인했어요, 딱 좋습니다! 이어서 2단계 부탁드려요.\n\n**2단계 — \"요약\" 시트에 카테고리별 합계**\n- 시트 이름은 정확히 `요약` 이고, 상세 시트 옆에 새로 만들어주세요.\n- 1행이 머리글이에요: `카테고리 / 수량 합계 / 매출 합계` 세 칸.\n- 2행부터 카테고리별로 한 줄씩, **매출 합계가 큰 순서(내림차순)** 로 정렬해주세요.\n- 여기가 제일 중요한데요, 합계 칸은 **계산해서 나온 숫자를 그냥 박아넣지 마시고 상세 시트를 참조하는 수식**으로 넣어주세요. 나중에 영업팀에서 상세 시트 숫자를 직접 고치는 경우가 있는데 그때 요약이 같이 안 바뀌면 사고가 나서요.\n- 그리고 저희 팀은 엑셀을 안 쓰고 사내 문서 뷰어로 열어봐요. **뷰어에서 열었을 때 요약 시트 합계가 빈칸으로 보이면 안 됩니다** — 지난번에 받은 파일이 그래서 다시 만들었거든요. 수식은 수식대로 살아있으면서 값도 같이 보여야 해요.\n\n부탁드립니다!",
+      "unlockPath": "problems/starters/report-xlsx-staged-stage2",
+      "gateTestCommand": "node --test tests/stage1.test.js tests/stage2.test.js"
+    },
+    {
+      "index": 3,
+      "title": "3단계: 표시 형식",
+      "promptAddition": "오 뷰어에서 잘 보이네요, 감사합니다! 이제 보기 좋게 다듬는 단계예요.\n\n**3단계 — 금액 칸 통화 표시, 상품명 안 잘리게**\n- 돈이 들어가는 칸(상세 시트의 `단가` / `금액`, 요약 시트의 `매출 합계`)은 원화 통화로 보이게 해주세요. 표시 형식은 `₩#,##0` 으로요 — **원 단위까지만, 소수점은 안 나오게요.**\n- 주의하실 게, **셀에 들어가는 값 자체는 계속 숫자여야 해요.** 보기 좋으라고 `₩1,290,000` 같은 문자열로 만들어서 넣으시면 안 됩니다 — 그러면 저희가 그 열로 필터/정렬을 못 걸어요.\n- 반대로 `수량` 칸(상세의 `수량`, 요약의 `수량 합계`)은 돈이 아니니까 통화 말고 천단위 구분만요. 표시 형식 `#,##0` 으로 해주세요.\n- 그리고 상품명이 긴 게 좀 있어서 열 너비 기본값이면 잘려요. 상세 시트 `상품명` 열만 넉넉하게 (한 36 정도?) 넓혀주세요.\n\n이것만 되면 거의 다 됐어요!",
+      "unlockPath": "problems/starters/report-xlsx-staged-stage3",
+      "gateTestCommand": "node --test tests/stage1.test.js tests/stage2.test.js tests/stage3.test.js"
+    },
+    {
+      "index": 4,
+      "title": "4단계: 제목 병합 + 틀 고정",
+      "promptAddition": "마지막입니다! 고생 많으셨어요 🙏\n\n**4단계 — 제목이랑 틀 고정**\n- 아까 비워둔 상세 시트 1행에 제목을 넣을게요. `A1` 부터 `F1` 까지 **한 칸으로 병합**하고, 거기에 `2026년 2분기 매출 상세` 라고 넣어주세요.\n- 스크롤 내려도 위쪽이 안 사라지게 **틀 고정**도 걸어주세요. 두 시트가 머리글 위치가 달라서 값이 다르니 헷갈리지 마시고요:\n  - `상세` 시트는 제목이랑 머리글까지 해서 **위에서 두 줄**이 고정돼야 해요 (즉 3행부터 스크롤).\n  - `요약` 시트는 머리글 한 줄뿐이니까 **위에서 한 줄**만요 (2행부터 스크롤).\n\n이거까지 되면 끝이에요. 확인 후 \"완료\" 눌러주시면 됩니다. 정말 감사합니다!",
+      "unlockPath": "problems/starters/report-xlsx-staged-stage4",
+      "gateTestCommand": "node --test tests/stage1.test.js tests/stage2.test.js tests/stage3.test.js tests/stage4.test.js"
+    }
+  ]
+}

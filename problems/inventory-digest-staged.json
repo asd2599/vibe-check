@@ -1,0 +1,74 @@
+{
+  "id": "inventory-digest-staged",
+  "title": "사내 데이터 잡무 릴레이 (단계별 제출)",
+  "difficulty": "easy",
+  "category": "cli-tool",
+  "prompt": "[슬랙 DM - 최대리]\n안녕하세요! 재고 리포트 자동화 좀 부탁드려도 될까요 🙏\n먼저 data/inventory.csv 보고 전체 재고 수량 합계랑 전체 재고 금액(단가×수량) 합계부터 뽑아주세요.\n실행은 node report.js data/inventory.csv 형태로 하고, 표준출력에 JSON 한 줄로\n{ \"totalQuantity\": 합계, \"totalValue\": 합계 } 이렇게 부탁드려요(필드명 꼭 이대로 부탁드려요!).\n\n아 그리고 미리 양해 구할게요 — 제가 여러 팀 일을 같이 받아서 넘겨드리는 자리라, 중간에 재고랑 전혀 상관없는 다른 팀 요청이 몇 번 끼어들 거예요. 그때그때 부탁드리고, 다 끝나면 다시 재고 쪽으로 돌아옵니다.\n\n일단 이것부터 확인되면 이어서 요청드릴게요 — 아래 \"이 단계 제출\"로 채점받아주세요!",
+  "starterFiles": "problems/starters/inventory-digest-staged",
+  "testCommand": "npm test",
+  "hiddenTestsPath": "problems/starters/inventory-digest-staged-hidden",
+  "rubric": [
+    "각 팀 요청을 다시 돌릴 수 있는 형태로 남겼는가 — 결과 JSON 파일만 덩그러니 있는 게 아니라 그걸 만들어내는 코드가 워크스페이스에 있는가",
+    "세 직무(재고/후기/경비)의 처리 로직이 서로 뒤엉키지 않고 분리돼 있는가",
+    "채팅으로만 안내받은 비관습적 규칙(카테고리 코드 매핑, 카테고리별 재고 부족 기준, 경비 항목별 판정 기준과 경계값)을 정확히 반영했는가",
+    "마지막 단계에서 앞선 재고 규칙을 다시 쓸 때, 앞 단계 코드를 재사용했는가 아니면 규칙을 새로 짜맞췄는가",
+    "코드 가독성"
+  ],
+  "maxCostUsd": 0.7,
+  "maxTokens": 8000000,
+  "referenceWeightedTokens": 500000,
+  "tokenScoreZeroAtRatio": 1.1,
+  "maxDurationMs": 2700000,
+  "targetDurationMs": 1500000,
+  "stages": [
+    {
+      "index": 1,
+      "title": "1단계 게이트 (내부용, 화면에 노출되지 않음)",
+      "promptAddition": "",
+      "unlockPath": null,
+      "gateTestCommand": "node --test tests/stage1.test.js"
+    },
+    {
+      "index": 2,
+      "title": "2단계 [물류팀]: 카테고리별 집계 + 재고 부족",
+      "promptAddition": "확인했습니다, 감사해요! 재고 쪽 하나만 더 얹을게요. data/inventory.csv에 분류 컬럼을 추가해서 다시 넣어드렸어요.\n\n① 카테고리별로도 수량/금액 합계를 보고 싶다고 하시네요. 근데 출력에는 분류 컬럼 값(한글)을 그대로 쓰면 안 되고 저희 시스템 코드로 바꿔서 넣어주셔야 해요 — 전자기기는 ELEC, 생활잡화는 HHLD, 문구용품은 OFSP, 가구는 FURN이에요(다른 시스템이랑 연동되는 고정 코드라 꼭 정확히 맞춰주세요!). 별도 문서는 안 드릴게요, 이 내용이 전부예요.\n출력에 byCategory 필드를 추가해서, 이 코드를 키로 각 카테고리마다 { \"quantity\": 수량 합계, \"value\": 금액 합계 } 이렇게요.\n\n② 재고 부족 품목도요. 기준이 카테고리마다 다릅니다 — 전자기기(ELEC)는 5개 미만, 생활잡화(HHLD)는 20개 미만, 문구용품(OFSP)은 30개 미만, 가구(FURN)는 3개 미만이면 부족으로 봐주세요. lowStock 필드에 해당 품목명을 배열로 담아주시면 됩니다(순서 무관).\n\n기존 totalQuantity/totalValue는 그대로 두시고요. 이거까지 되면 재고 쪽은 일단 마무리예요!",
+      "unlockPath": "problems/starters/inventory-digest-staged-stage2",
+      "gateTestCommand": "node --test tests/stage1.test.js tests/stage2.test.js"
+    },
+    {
+      "index": 3,
+      "title": "3단계 [CS팀]: 환불/교환 요청 후기 추출",
+      "promptAddition": "재고 쪽은 여기까지고요! 말씀드린 대로 다른 팀 요청이 하나 들어왔어요 🙏 이번엔 CS팀 건이라 재고랑은 아무 상관 없습니다.\n\ndata/reviews.json에 고객 후기가 들어있어요(양이 좀 됩니다). 여기서 **별점이 2점 이하이면서 본문에 '환불' 또는 '교환'이라는 말이 들어간** 후기의 id만 골라서, 워크스페이스 루트의 refund-requests.json에 배열로 저장해주세요. (예: [\"R004\", \"R015\"])\n두 조건을 **모두** 만족하는 것만이에요 — 별점만 낮은 건 빼고, 환불/교환 얘기가 있어도 별점이 높으면 빼주세요.",
+      "unlockPath": "problems/starters/inventory-digest-staged-stage3",
+      "gateTestCommand": "node --test tests/stage1.test.js tests/stage2.test.js tests/stage3.test.js"
+    },
+    {
+      "index": 4,
+      "title": "4단계 [CS팀]: 후기 통계",
+      "promptAddition": "감사합니다! CS팀에서 하나만 더 봐달라고 하네요. 같은 후기 파일로 간단한 통계만요.\n\n워크스페이스 루트에 review-stats.json으로, 이렇게 네 개 필드를 넣어주세요:\n- count: 전체 후기 수\n- byRating: 별점별 건수 (예: { \"1\": 10, \"2\": 20, ... }) — 키는 문자열로요\n- avgRating: 평균 별점인데 **반올림 말고 소수 셋째 자리에서 버림**해주세요 (예: 3.567이면 3.56)\n- refundMentionCount: **별점과 상관없이** 본문에 '환불' 또는 '교환'이 들어간 후기의 총 건수예요. 아까 뽑아주신 목록이랑은 다른 숫자입니다 — 이건 별점 조건 없이 세는 거예요.\n\n이거까지가 CS팀 건이에요, 감사합니다!",
+      "unlockPath": "problems/starters/inventory-digest-staged-stage4",
+      "gateTestCommand": "node --test tests/stage1.test.js tests/stage2.test.js tests/stage3.test.js tests/stage4.test.js"
+    },
+    {
+      "index": 5,
+      "title": "5단계 [회계팀]: 경비 규정 위반 검출",
+      "promptAddition": "CS팀 건 잘 받았습니다! 이번엔 회계팀이에요 — 이것도 앞이랑 완전히 별개 건입니다 🙏\n\ndata/expenses.json에 지난달 경비 내역이 들어있어요. 사내 규정에 어긋나는 항목만 골라서 워크스페이스 루트 expense-violations.json에 id 배열로 주세요.\n\n규정이 항목마다 달라서 정확히 알려드릴게요:\n- **식대**: 총액이 아니라 **1인당 금액**(금액 ÷ 인원)이 15,000원을 **초과**하면 위반이에요. 정확히 15,000원이면 정상입니다.\n- **교통비**: 영수증이 없으면 위반인데, **금액이 20,000원 이하면 영수증 없어도 정상**이에요(소액 예외). 정확히 20,000원도 정상입니다.\n- **접대비**: 인원과 무관하게 **총액**이 30,000원을 **초과**하면 위반이에요. 여기는 1인당으로 나누지 마세요. 정확히 30,000원이면 정상입니다.\n- **비품**: 금액이 크든 영수증이 없든 위반으로 잡지 않습니다.\n\n경계값이 좀 헷갈리실 수 있는데 '초과'랑 '이하' 그대로 봐주시면 됩니다!",
+      "unlockPath": "problems/starters/inventory-digest-staged-stage5",
+      "gateTestCommand": "node --test tests/stage1.test.js tests/stage2.test.js tests/stage3.test.js tests/stage4.test.js tests/stage5.test.js"
+    },
+    {
+      "index": 6,
+      "title": "6단계 [회계팀]: 부서별 경비 집계",
+      "promptAddition": "좋아요! 회계팀 마지막 건이에요. 같은 경비 파일로 부서별 집계 하나만요.\n\n워크스페이스 루트에 expense-summary.json으로, 부서명을 키로 해서 각 부서마다\n{ \"total\": 그 부서 경비 총액, \"violationCount\": 그 부서의 위반 건수 }\n이렇게 넣어주세요. 위반 판정은 방금 쓰신 규정 그대로예요.\n\n이걸로 회계팀 건은 끝입니다, 감사합니다!",
+      "unlockPath": "problems/starters/inventory-digest-staged-stage6",
+      "gateTestCommand": "node --test tests/stage1.test.js tests/stage2.test.js tests/stage3.test.js tests/stage4.test.js tests/stage5.test.js tests/stage6.test.js"
+    },
+    {
+      "index": 7,
+      "title": "7단계 [물류팀 복귀]: 재주문 리포트",
+      "promptAddition": "여러 팀 건 받아주시느라 고생 많으셨어요 🙏 마지막으로 처음의 재고 건으로 돌아갑니다!\n\n아까 뽑아주신 재고 부족 품목들, 얼마나 주문해야 하는지까지 내달라고 하시네요.\n재주문 수량 = **그 품목이 속한 카테고리의 재고 부족 기준 × 3 − 현재 수량** 이에요.\n(예: 기준이 5개인 카테고리에 수량이 3개면 5×3−3 = 12)\n\n워크스페이스 루트에 reorder.json으로, 품목명을 키, 재주문 수량을 값으로 넣어주세요.\n재고 부족으로 잡힌 품목만 넣으시면 됩니다.\n\n카테고리 기준은 아까 말씀드린 그대로예요. 이것까지 되면 정말 끝입니다, 감사합니다!",
+      "unlockPath": "problems/starters/inventory-digest-staged-stage7",
+      "gateTestCommand": "node --test tests/stage1.test.js tests/stage2.test.js tests/stage3.test.js tests/stage4.test.js tests/stage5.test.js tests/stage6.test.js tests/stage7.test.js"
+    }
+  ]
+}

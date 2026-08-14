@@ -1,0 +1,96 @@
+{
+  "width": 5,
+  "height": 5,
+  "terrain": [
+    [
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain"
+    ],
+    [
+      "plain",
+      "plain",
+      "forest",
+      "plain",
+      "plain"
+    ],
+    [
+      "plain",
+      "plain",
+      "water",
+      "plain",
+      "plain"
+    ],
+    [
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain"
+    ],
+    [
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain"
+    ]
+  ],
+  "units": [
+    {
+      "id": "a1",
+      "team": "ally",
+      "x": 2,
+      "y": 2,
+      "hp": 50,
+      "maxHp": 50,
+      "atk": 14,
+      "def": 6,
+      "spd": 9,
+      "move": 1,
+      "range": 1,
+      "gauge": 100
+    },
+    {
+      "id": "e1",
+      "team": "enemy",
+      "x": 2,
+      "y": 1,
+      "hp": 40,
+      "maxHp": 40,
+      "atk": 10,
+      "def": 5,
+      "spd": 5,
+      "move": 1,
+      "range": 1
+    },
+    {
+      "id": "e2",
+      "team": "enemy",
+      "x": 3,
+      "y": 3,
+      "hp": 40,
+      "maxHp": 40,
+      "atk": 10,
+      "def": 7,
+      "spd": 4,
+      "move": 1,
+      "range": 1
+    },
+    {
+      "id": "e3",
+      "team": "enemy",
+      "x": 4,
+      "y": 4,
+      "hp": 40,
+      "maxHp": 40,
+      "atk": 10,
+      "def": 5,
+      "spd": 3,
+      "move": 1,
+      "range": 1
+    }
+  ]
+}

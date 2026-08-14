@@ -1,0 +1,142 @@
+{
+  "width": 8,
+  "height": 8,
+  "terrain": [
+    [
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain"
+    ],
+    [
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "water",
+      "plain",
+      "plain"
+    ],
+    [
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "water",
+      "plain",
+      "plain"
+    ],
+    [
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "wall",
+      "plain",
+      "plain",
+      "plain"
+    ],
+    [
+      "plain",
+      "plain",
+      "forest",
+      "forest",
+      "plain",
+      "plain",
+      "plain",
+      "plain"
+    ],
+    [
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain"
+    ],
+    [
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain"
+    ],
+    [
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain"
+    ]
+  ],
+  "units": [
+    {
+      "id": "a1",
+      "team": "ally",
+      "x": 1,
+      "y": 3,
+      "hp": 44,
+      "maxHp": 44,
+      "atk": 12,
+      "def": 6,
+      "spd": 8,
+      "move": 4,
+      "range": 1
+    },
+    {
+      "id": "a2",
+      "team": "ally",
+      "x": 1,
+      "y": 5,
+      "hp": 34,
+      "maxHp": 34,
+      "atk": 10,
+      "def": 4,
+      "spd": 5,
+      "move": 3,
+      "range": 2,
+      "venom": true
+    },
+    {
+      "id": "e1",
+      "team": "enemy",
+      "x": 6,
+      "y": 3,
+      "hp": 42,
+      "maxHp": 42,
+      "atk": 13,
+      "def": 5,
+      "spd": 8,
+      "move": 4,
+      "range": 1
+    },
+    {
+      "id": "e2",
+      "team": "enemy",
+      "x": 6,
+      "y": 5,
+      "hp": 36,
+      "maxHp": 36,
+      "atk": 11,
+      "def": 6,
+      "spd": 5,
+      "move": 3,
+      "range": 2,
+      "venom": true
+    }
+  ]
+}

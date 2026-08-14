@@ -1,0 +1,189 @@
+{
+  "width": 9,
+  "height": 9,
+  "terrain": [
+    [
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain"
+    ],
+    [
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain"
+    ],
+    [
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain"
+    ],
+    [
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "forest",
+      "plain",
+      "plain",
+      "plain",
+      "plain"
+    ],
+    [
+      "plain",
+      "plain",
+      "wall",
+      "plain",
+      "water",
+      "plain",
+      "wall",
+      "plain",
+      "plain"
+    ],
+    [
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "forest",
+      "plain",
+      "plain",
+      "plain",
+      "plain"
+    ],
+    [
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain"
+    ],
+    [
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain"
+    ],
+    [
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain"
+    ]
+  ],
+  "units": [
+    {
+      "id": "a1",
+      "team": "ally",
+      "x": 1,
+      "y": 4,
+      "hp": 80,
+      "maxHp": 80,
+      "atk": 14,
+      "def": 6,
+      "spd": 8,
+      "move": 3,
+      "range": 1
+    },
+    {
+      "id": "a2",
+      "team": "ally",
+      "x": 1,
+      "y": 2,
+      "hp": 62,
+      "maxHp": 62,
+      "atk": 11,
+      "def": 5,
+      "spd": 6,
+      "move": 3,
+      "range": 2,
+      "venom": true
+    },
+    {
+      "id": "a3",
+      "team": "ally",
+      "x": 1,
+      "y": 6,
+      "hp": 70,
+      "maxHp": 70,
+      "atk": 12,
+      "def": 8,
+      "spd": 4,
+      "move": 3,
+      "range": 1,
+      "gauge": 60
+    },
+    {
+      "id": "e1",
+      "team": "enemy",
+      "x": 7,
+      "y": 4,
+      "hp": 80,
+      "maxHp": 80,
+      "atk": 13,
+      "def": 6,
+      "spd": 8,
+      "move": 3,
+      "range": 1
+    },
+    {
+      "id": "e2",
+      "team": "enemy",
+      "x": 7,
+      "y": 2,
+      "hp": 62,
+      "maxHp": 62,
+      "atk": 12,
+      "def": 5,
+      "spd": 6,
+      "move": 3,
+      "range": 2,
+      "venom": true
+    },
+    {
+      "id": "e3",
+      "team": "enemy",
+      "x": 7,
+      "y": 6,
+      "hp": 70,
+      "maxHp": 70,
+      "atk": 11,
+      "def": 8,
+      "spd": 4,
+      "move": 3,
+      "range": 1,
+      "gauge": 60
+    }
+  ]
+}

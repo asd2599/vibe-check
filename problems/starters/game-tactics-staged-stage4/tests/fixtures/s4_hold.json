@@ -1,0 +1,62 @@
+{
+  "width": 7,
+  "height": 3,
+  "terrain": [
+    [
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain"
+    ],
+    [
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain"
+    ],
+    [
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain"
+    ]
+  ],
+  "units": [
+    {
+      "id": "a1",
+      "team": "ally",
+      "x": 0,
+      "y": 1,
+      "hp": 50,
+      "maxHp": 50,
+      "atk": 14,
+      "def": 6,
+      "spd": 9,
+      "move": 1,
+      "range": 1,
+      "gauge": 100
+    },
+    {
+      "id": "e1",
+      "team": "enemy",
+      "x": 6,
+      "y": 1,
+      "hp": 40,
+      "maxHp": 40,
+      "atk": 10,
+      "def": 5,
+      "spd": 5,
+      "move": 1,
+      "range": 1
+    }
+  ]
+}

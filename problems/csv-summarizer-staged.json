@@ -1,0 +1,51 @@
+{
+  "id": "csv-summarizer-staged",
+  "title": "매출 CSV 합산기 (단계별 제출)",
+  "difficulty": "medium",
+  "category": "cli-tool",
+  "prompt": "[슬랙 DM - 정팀장]\n안녕하세요! 매출 정산 자동화가 필요해서요, 단계별로 부탁드릴게요 🙏\n\n① 먼저 매출 CSV 파일 하나 읽어서 amount 컬럼 합계부터 내주세요. 샘플은 워크스페이스 data/ 폴더에 넣어뒀어요.\n실행은 node summarize.js <파일경로> 형태로 부탁드리고, 표준출력에 JSON 한 줄로\n{ \"total\": 합계, \"counted\": 합산된 행 수, \"skipped\": 건너뛴 행 수 } 형식 그대로 내주시면 돼요(이 필드 이름 꼭 지켜주세요!).\n\n이후 요구사항은 이거 확인되면 이어서 드릴게요 — 일단 이것부터 완성해서 아래 \"이 단계 제출\"로 채점받아주세요!",
+  "starterFiles": "problems/starters/csv-summarizer-staged",
+  "testCommand": "npm test",
+  "hiddenTestsPath": "problems/starters/csv-summarizer-staged-hidden",
+  "rubric": [
+    "각 단계 요구사항(구분자 확장, RFC 4180 따옴표 처리, 더러운 값 판정 + 반올림)을 정확히 반영했는가",
+    "RULES.md의 비관습적 규칙(헤더 이름으로 amount 컬럼 찾기, 출력 필드명 total/counted/skipped, 1,200 유효/₩1,200 skip)을 정확히 반영했는가",
+    "단계가 쌓이며(구분자 확장 → 따옴표 파싱 → 더러운 값 판정) 코드가 전면 재작성 없이 확장 가능한 구조인가(파싱/판정/합산 관심사 분리)",
+    "코드 가독성"
+  ],
+  "maxCostUsd": 2.0,
+  "maxTokens": 4000000,
+  "referenceWeightedTokens": 900000,
+  "maxDurationMs": 1500000,
+  "targetDurationMs": 900000,
+  "stages": [
+    {
+      "index": 1,
+      "title": "1단계 게이트 (내부용, 화면에 노출되지 않음)",
+      "promptAddition": "",
+      "unlockPath": null,
+      "gateTestCommand": "node --test tests/stage1.test.js"
+    },
+    {
+      "index": 2,
+      "title": "2단계: 부서별 포맷(구분자) 확장",
+      "promptAddition": "1단계 확인했습니다, 감사해요! 근데 부서마다 파일 포맷이 달라서요 — 어떤 데는 TSV(탭), 어떤 데는 파이프(|)로 줘요. 그것도 처리되게 해주세요.\n(data/에 새 샘플 두 개 추가해뒀고, 지금까지 확인된 규칙은 RULES.md에 정리해서 같이 넣어드렸어요 — 꼭 확인 부탁드려요! 특히 파일마다 컬럼 순서가 달라요.)",
+      "unlockPath": "problems/starters/csv-summarizer-staged-stage2",
+      "gateTestCommand": "node --test tests/stage1.test.js tests/stage2.test.js"
+    },
+    {
+      "index": 3,
+      "title": "3단계: 따옴표(RFC 4180) 처리",
+      "promptAddition": "이것도 잘 되네요! 근데 금액이나 메모에 쉼표가 들어가서 따옴표(\")로 감싼 칸이 종종 있더라고요. 그거 때문에 숫자가 깨지면 안 돼요.\n(샘플 추가했고 RULES.md도 갱신해뒀어요!)",
+      "unlockPath": "problems/starters/csv-summarizer-staged-stage3",
+      "gateTestCommand": "node --test tests/stage1.test.js tests/stage2.test.js tests/stage3.test.js"
+    },
+    {
+      "index": 4,
+      "title": "4단계: 더러운 값 판정 + 반올림",
+      "promptAddition": "마지막이에요! 금액 칸이 비었거나 이상한 값(예: N/A, ₩1,200 같은 거)인 행이 섞여 있어요. 그런 행은 합산에서 빼고, 대신 몇 개나 건너뛰었는지 같이 알려주세요.\n세부 판정 규칙이랑 반올림 방식은 RULES.md에 마지막으로 정리해서 넣어뒀으니 꼭 확인해 주세요! 이것까지 되면 끝이에요, 감사합니다 🙏",
+      "unlockPath": "problems/starters/csv-summarizer-staged-stage4",
+      "gateTestCommand": "node --test tests/stage1.test.js tests/stage2.test.js tests/stage3.test.js tests/stage4.test.js"
+    }
+  ]
+}

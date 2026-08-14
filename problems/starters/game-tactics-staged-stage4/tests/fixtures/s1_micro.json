@@ -1,0 +1,82 @@
+{
+  "width": 5,
+  "height": 5,
+  "terrain": [
+    [
+      "plain",
+      "plain",
+      "wall",
+      "plain",
+      "plain"
+    ],
+    [
+      "plain",
+      "plain",
+      "wall",
+      "plain",
+      "plain"
+    ],
+    [
+      "plain",
+      "plain",
+      "wall",
+      "plain",
+      "plain"
+    ],
+    [
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain"
+    ],
+    [
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain"
+    ]
+  ],
+  "units": [
+    {
+      "id": "a1",
+      "team": "ally",
+      "x": 1,
+      "y": 2,
+      "hp": 30,
+      "maxHp": 30,
+      "atk": 10,
+      "def": 5,
+      "spd": 4,
+      "move": 2,
+      "range": 1
+    },
+    {
+      "id": "e1",
+      "team": "enemy",
+      "x": 1,
+      "y": 1,
+      "hp": 30,
+      "maxHp": 30,
+      "atk": 10,
+      "def": 5,
+      "spd": 6,
+      "move": 2,
+      "range": 1
+    },
+    {
+      "id": "e2",
+      "team": "enemy",
+      "x": 4,
+      "y": 2,
+      "hp": 30,
+      "maxHp": 30,
+      "atk": 8,
+      "def": 4,
+      "spd": 2,
+      "move": 2,
+      "range": 3
+    }
+  ]
+}

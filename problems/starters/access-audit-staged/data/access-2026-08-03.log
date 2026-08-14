@@ -1,0 +1,603 @@
+2026-08-03T00:04:21.884+09:00|u_00415|PUT /api/inventory/{sku}|200|1278ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T00:07:23.734+09:00|u_00415|GET /api/inventory|201|1333ms|GoogleBot/2.1 (+http://www.google.com/bot.html)
+2026-08-03T00:11:00.108+09:00|u_00405|GET /api/orders|499|1607ms|python-requests/2.32
+2026-08-03T00:13:29.237+09:00|u_00405|POST /api/orders|499|1249ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T00:20:28.237+09:00|u_00405|DELETE /api/orders/{id}|200|1574ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T00:22:05.485+09:00|u_00405|GET /api/orders/{id}|499|114ms|python-requests/2.32
+2026-08-03T00:22:25.782+09:00|u_00415|DELETE /api/orders/{id}|204|159ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T00:24:58.529+09:00|u_00405|GET /api/reports/daily|304|1181ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T00:27:28.951+09:00|u_00405|GET /api/inventory|201|569ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T00:28:46.700+09:00|u_00405|POST /api/orders|201|867ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T00:29:24.782+09:00|u_00415|GET /api/inventory|200|1156ms|GoogleBot/2.1 (+http://www.google.com/bot.html)
+2026-08-03T00:30:56.440+09:00|u_00405|DELETE /api/orders/{id}|503|731ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T00:31:05.950+09:00|u_00415|DELETE /api/orders/{id}|503|1606ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T00:31:30.092+09:00|u_00415|GET /api/orders/{id}|302|852ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T00:31:42.848+09:00|u_00405|PUT /api/inventory/{sku}|204|139ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T00:32:33.405+09:00|u_00405|PUT /api/inventory/{sku}|200|1018ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T00:33:34.690+09:00|u_00415|DELETE /api/orders/{id}|204|1052ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T00:35:00.886+09:00|u_00415|POST /api/auth/login|301|1303ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T00:35:15.203+09:00|u_00405|POST /api/auth/login|302|591ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T00:38:02.715+09:00|u_00405|POST /api/orders|500|1355ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T00:40:23.151+09:00|u_00405|GET /api/orders|302|1021ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T00:41:59.886+09:00|u_00415|PUT /api/inventory/{sku}|409|200ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T00:45:07.898+09:00|u_00418|DELETE /api/orders/{id}|400|1305ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T00:48:06.056+09:00|u_00418|GET /api/orders/{id}|304|1002ms|curl/8.7.1
+2026-08-03T00:49:00.886+09:00|u_00415|GET /api/inventory|204|341ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T00:49:04.558+09:00|u_00418|GET /api/orders|201|1307ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T00:51:59.634+09:00|u_00415|POST /api/auth/login|201|299ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T00:54:59.065+09:00|u_00415|PUT /api/inventory/{sku}|201|642ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T00:56:03.558+09:00|u_00418|GET /api/orders/{id}|204|463ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T00:56:36.235+09:00|u_00415|GET /api/orders/{id}|204|1253ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T00:56:55.884+09:00|u_00418|GET /api/orders|200|805ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T00:57:47.075+09:00|u_00415|GET /api/orders/{id}|200|679ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T00:58:17.369+09:00|u_00418|DELETE /api/orders/{id}|500|1142ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T01:00:37.073+09:00|u_00415|PUT /api/inventory/{sku}|304|1256ms|python-requests/2.32
+2026-08-03T01:07:36.073+09:00|u_00415|POST /api/orders|200|891ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T01:11:21.514+09:00|u_00405|PUT /api/inventory/{sku}|404|1312ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T01:11:45.877+09:00|u_00405|GET /api/orders/{id}|200|1064ms|GoogleBot/2.1 (+http://www.google.com/bot.html)
+2026-08-03T01:13:57.164+09:00|u_00420|DELETE /api/orders/{id}|204|304ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T01:18:44.877+09:00|u_00405|GET /api/inventory|302|1637ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T01:19:04.006+09:00|u_00403|GET /api/orders|302|1679ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T01:19:46.981+09:00|u_00403|POST /api/orders|204|1200ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T01:20:56.164+09:00|u_00420|GET /api/orders/{id}|201|83ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T01:21:29.965+09:00|u_00405|GET /api/reports/daily|499|995ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T01:24:20.567+09:00|u_00424|DELETE /api/orders/{id}|201|1311ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T01:26:23.619+09:00|u_00424|DELETE /api/orders/{id}|201|140ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T01:26:25.743+09:00|u_00415|GET /api/inventory|409|1375ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T01:27:57.164+09:00|u_00420|GET /api/orders/{id}|200|1478ms|curl/8.7.1
+2026-08-03T01:28:00.410+09:00|u_00424|DELETE /api/orders/{id}|200|1319ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T01:28:11.306+09:00|u_00403|GET /api/orders/{id}|201|965ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T01:28:28.965+09:00|u_00405|GET /api/inventory|201|610ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T01:28:37.647+09:00|u_00403|PUT /api/inventory/{sku}|301|1698ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T01:29:00.905+09:00|u_00424|GET /api/inventory|500|982ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T01:30:37.780+09:00|u_00424|GET /api/orders/{id}|201|1187ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T01:31:35.768+09:00|u_00403|POST /api/orders|200|1088ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T01:32:54.760+09:00|u_00424|PUT /api/inventory/{sku}|302|1567ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T01:34:56.164+09:00|u_00420|GET /api/orders/{id}|201|605ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T01:35:27.965+09:00|u_00405|GET /api/orders|201|234ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T01:35:39.345+09:00|u_00418|DELETE /api/orders/{id}|200|1760ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T01:36:23.783+09:00|u_00418|POST /api/auth/login|302|617ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T01:38:06.887+09:00|u_00420|DELETE /api/orders/{id}|500|1046ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T01:42:28.965+09:00|u_00405|GET /api/orders/{id}|200|1532ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T01:42:55.829+09:00|u_00403|DELETE /api/orders/{id}|201|329ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T01:43:24.783+09:00|u_00418|GET /api/inventory|200|90ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T01:43:48.543+09:00|u_00403|GET /api/orders/{id}|204|1205ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T01:45:05.887+09:00|u_00420|PUT /api/inventory/{sku}|499|163ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T01:51:08.454+09:00|u_00414|GET /api/reports/daily|204|1486ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T01:52:43.743+09:00|u_00402|PUT /api/inventory/{sku}|400|881ms|curl/8.7.1
+2026-08-03T01:53:32.472+09:00|u_00420|POST /api/auth/login|200|1092ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T01:54:01.755+09:00|u_00414|PUT /api/inventory/{sku}|409|845ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T01:54:20.144+09:00|u_00424|GET /api/orders/{id}|499|475ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T01:55:39.130+09:00|u_00402|GET /api/orders|301|613ms|python-requests/2.32
+2026-08-03T01:57:42.519+09:00|u_00415|GET /api/reports/daily|401|944ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T01:58:05.138+09:00|u_00402|GET /api/reports/daily|204|437ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T02:00:33.472+09:00|u_00420|POST /api/auth/login|304|1796ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T02:01:00.755+09:00|u_00414|DELETE /api/orders/{id}|409|109ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T02:01:21.144+09:00|u_00424|DELETE /api/orders/{id}|201|588ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T02:02:31.320+09:00|u_00424|GET /api/orders/{id}|200|1242ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T02:04:41.519+09:00|u_00415|GET /api/reports/daily|201|822ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T02:05:42.236+09:00|u_00424|DELETE /api/orders/{id}|200|1029ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T02:07:44.151+09:00|u_00405|POST /api/auth/login|204|1654ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T02:07:59.755+09:00|u_00414|GET /api/orders/{id}|200|1534ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T02:08:38.412+09:00|u_00405|GET /api/orders|200|249ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T02:09:51.493+09:00|u_00405|PUT /api/inventory/{sku}|200|1194ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T02:10:44.185+09:00|u_00418|POST /api/auth/login|200|1238ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T02:11:16.639+09:00|u_00414|GET /api/inventory|499|90ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T02:11:42.519+09:00|u_00415|GET /api/reports/daily|201|1561ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T02:12:23.027+09:00|u_00403|DELETE /api/orders/{id}|200|1046ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T02:12:36.874+09:00|u_00418|GET /api/orders/{id}|304|604ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T02:14:58.941+09:00|u_00415|GET /api/inventory|400|125ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T02:17:31.994+09:00|u_00415|POST /api/orders|200|820ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T02:17:51.653+09:00|u_00424|GET /api/orders|201|1384ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T02:18:15.639+09:00|u_00414|GET /api/reports/daily|200|1655ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T02:18:53.154+09:00|u_00420|GET /api/reports/daily|301|1644ms|python-requests/2.32
+2026-08-03T02:19:24.027+09:00|u_00403|GET /api/orders|400|990ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T02:21:59.646+09:00|u_00403|PUT /api/inventory/{sku}|204|1507ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T02:22:25.883+09:00|u_00403|GET /api/reports/daily|503|720ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T02:24:30.994+09:00|u_00415|POST /api/auth/login|409|1150ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T02:24:49.169+09:00|u_00403|GET /api/inventory|503|854ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T02:24:50.653+09:00|u_00424|GET /api/reports/daily|304|84ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T02:25:16.639+09:00|u_00414|DELETE /api/orders/{id}|204|366ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T02:25:54.154+09:00|u_00420|POST /api/auth/login|200|844ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T02:27:38.172+09:00|u_00415|POST /api/auth/login|404|815ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T02:30:45.722+09:00|u_00415|POST /api/auth/login|201|678ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T02:31:01.316+09:00|u_00402|DELETE /api/orders/{id}|400|260ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T02:31:48.169+09:00|u_00403|DELETE /api/orders/{id}|500|1205ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T02:31:51.653+09:00|u_00424|GET /api/orders/{id}|201|1719ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T02:32:15.639+09:00|u_00414|POST /api/orders|204|1182ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T02:32:55.154+09:00|u_00420|POST /api/auth/login|499|1695ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T02:33:46.155+09:00|u_00424|GET /api/inventory|302|78ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T02:34:01.238+09:00|u_00415|POST /api/orders|204|1339ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T02:34:26.362+09:00|u_00424|GET /api/inventory|200|371ms|python-requests/2.32
+2026-08-03T02:34:50.841+09:00|u_00403|GET /api/reports/daily|204|814ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T02:35:16.801+09:00|u_00420|PUT /api/inventory/{sku}|200|1783ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T02:35:23.329+09:00|u_00424|GET /api/orders/{id}|500|1760ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T02:35:23.423+09:00|u_00415|GET /api/reports/daily|204|335ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T02:37:35.507+09:00|u_00424|POST /api/orders|204|354ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T02:37:59.510+09:00|u_00403|POST /api/auth/login|301|565ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T02:38:52.347+09:00|u_00405|POST /api/orders|499|364ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T02:39:16.639+09:00|u_00414|GET /api/orders/{id}|204|404ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T02:39:25.531+09:00|u_00418|DELETE /api/orders/{id}|500|509ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T02:39:36.203+09:00|u_00421|POST /api/orders|200|1511ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T02:40:03.099+09:00|u_00424|POST /api/orders|204|746ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T02:41:08.363+09:00|u_00424|PUT /api/inventory/{sku}|201|642ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T02:41:19.995+09:00|u_00405|GET /api/inventory|201|62ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T02:41:50.293+09:00|u_00418|GET /api/orders/{id}|200|324ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T02:42:15.801+09:00|u_00420|GET /api/reports/daily|400|1410ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T02:43:01.763+09:00|u_00424|POST /api/orders|204|1305ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T02:43:02.845+09:00|u_00418|GET /api/reports/daily|401|763ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T02:43:17.901+09:00|u_00405|GET /api/orders|304|1085ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T02:44:08.920+09:00|u_00420|PUT /api/inventory/{sku}|204|1027ms|python-requests/2.32
+2026-08-03T02:45:00.510+09:00|u_00403|POST /api/auth/login|201|842ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T02:45:15.567+09:00|u_00401|GET /api/orders/{id}|409|723ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T02:46:25.863+09:00|u_00405|POST /api/auth/login|200|42ms|curl/8.7.1
+2026-08-03T02:46:26.540+09:00|u_00420|GET /api/reports/daily|400|697ms|python-requests/2.32
+2026-08-03T02:46:26.832+09:00|u_00407|GET /api/orders|200|1663ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T02:46:35.203+09:00|u_00421|POST /api/auth/login|201|1194ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T02:46:42.576+09:00|u_00402|GET /api/inventory|201|434ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T02:47:46.518+09:00|u_00420|POST /api/orders|400|403ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T02:47:48.978+09:00|u_00405|GET /api/reports/daily|201|224ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T02:48:41.838+09:00|u_00405|GET /api/orders|200|271ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T02:49:02.657+09:00|u_00421|PUT /api/inventory/{sku}|499|1472ms|python-requests/2.32
+2026-08-03T02:50:03.845+09:00|u_00418|GET /api/orders|204|849ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T02:50:06.429+09:00|u_00405|GET /api/inventory|200|180ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T02:50:47.937+09:00|u_00423|GET /api/inventory|304|940ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T02:51:40.831+09:00|u_00405|DELETE /api/orders/{id}|301|428ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T02:52:16.567+09:00|u_00401|DELETE /api/orders/{id}|302|369ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T02:53:27.832+09:00|u_00407|GET /api/orders|204|192ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T02:53:41.576+09:00|u_00402|POST /api/orders|201|357ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T02:53:41.933+09:00|u_00401|DELETE /api/orders/{id}|204|687ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T02:54:11.990+09:00|u_00405|GET /api/orders/{id}|200|1781ms|python-requests/2.32
+2026-08-03T02:54:54.676+09:00|u_00407|PUT /api/inventory/{sku}|302|1450ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T02:54:58.834+09:00|u_00405|GET /api/orders/{id}|200|796ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T02:56:03.657+09:00|u_00421|PUT /api/inventory/{sku}|304|779ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T02:56:56.172+09:00|u_00421|DELETE /api/orders/{id}|201|180ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T02:57:21.779+09:00|u_00421|GET /api/orders/{id}|301|898ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T03:00:06.548+09:00|u_00417|DELETE /api/orders/{id}|204|831ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T03:00:40.933+09:00|u_00401|GET /api/reports/daily|204|509ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T03:00:44.243+09:00|u_00424|GET /api/orders|404|1775ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T03:01:59.834+09:00|u_00405|PUT /api/inventory/{sku}|304|1547ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T03:02:03.947+09:00|u_00417|DELETE /api/orders/{id}|401|1412ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T03:02:13.696+09:00|u_00417|DELETE /api/orders/{id}|204|1019ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T03:03:58.372+09:00|u_00417|POST /api/orders|200|1225ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T03:04:22.779+09:00|u_00421|GET /api/orders/{id}|301|1719ms|python-requests/2.32
+2026-08-03T03:06:07.852+09:00|u_00414|GET /api/inventory|201|344ms|curl/8.7.1
+2026-08-03T03:06:19.987+09:00|u_00414|PUT /api/inventory/{sku}|500|593ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T03:07:19.843+09:00|u_00420|POST /api/auth/login|204|1780ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T03:07:41.933+09:00|u_00401|GET /api/orders/{id}|499|1743ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T03:07:45.243+09:00|u_00424|GET /api/orders/{id}|204|552ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T03:07:56.906+09:00|u_00424|GET /api/inventory|499|1239ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T03:08:58.834+09:00|u_00405|GET /api/inventory|200|532ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T03:10:03.008+09:00|u_00401|GET /api/orders/{id}|200|568ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T03:10:15.261+09:00|u_00418|POST /api/orders|200|755ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T03:10:28.008+09:00|u_00401|PUT /api/inventory/{sku}|204|1560ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T03:10:31.759+09:00|u_00420|GET /api/orders/{id}|400|1430ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T03:10:48.001+09:00|u_00424|PUT /api/inventory/{sku}|409|676ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T03:11:23.779+09:00|u_00421|GET /api/orders|304|411ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T03:12:27.400+09:00|u_00424|GET /api/orders/{id}|201|517ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T03:12:37.243+09:00|u_00409|POST /api/orders|204|605ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T03:13:05.502+09:00|u_00410|GET /api/inventory|200|1387ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T03:13:18.987+09:00|u_00414|GET /api/inventory|201|560ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T03:13:36.415+09:00|u_00424|GET /api/orders|201|307ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T03:13:51.360+09:00|u_00410|DELETE /api/orders/{id}|200|575ms|curl/8.7.1
+2026-08-03T03:14:33.588+09:00|u_00421|GET /api/inventory|204|26ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T03:15:51.500+09:00|u_00409|GET /api/orders/{id}|201|1668ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T03:15:52.629+09:00|u_00402|PUT /api/inventory/{sku}|200|1296ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T03:15:57.834+09:00|u_00405|GET /api/inventory|200|321ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T03:16:08.548+09:00|u_00410|GET /api/orders|200|869ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T03:16:13.169+09:00|u_00414|DELETE /api/orders/{id}|201|1253ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T03:17:08.923+09:00|u_00414|DELETE /api/orders/{id}|500|1298ms|GoogleBot/2.1 (+http://www.google.com/bot.html)
+2026-08-03T03:17:14.261+09:00|u_00418|GET /api/orders/{id}|200|317ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T03:17:18.894+09:00|u_00410|POST /api/orders|404|329ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T03:17:27.008+09:00|u_00401|GET /api/orders|204|73ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T03:17:39.316+09:00|u_00405|GET /api/orders/{id}|201|1533ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T03:18:37.056+09:00|u_00409|GET /api/inventory|500|802ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T03:20:04.107+09:00|u_00403|POST /api/orders|304|571ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T03:20:08.820+09:00|u_00418|POST /api/orders|301|1596ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T03:20:30.391+09:00|u_00403|GET /api/reports/daily|499|636ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T03:21:32.588+09:00|u_00421|GET /api/inventory|200|1092ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T03:21:41.318+09:00|u_00409|GET /api/orders|200|1762ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T03:22:53.629+09:00|u_00402|POST /api/auth/login|200|567ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T03:23:49.969+09:00|u_00400|GET /api/orders|503|1175ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T03:24:06.194+09:00|u_00421|GET /api/inventory|204|1082ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T03:24:07.923+09:00|u_00414|GET /api/orders|200|248ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T03:24:36.660+09:00|u_00423|POST /api/orders|200|1660ms|GoogleBot/2.1 (+http://www.google.com/bot.html)
+2026-08-03T03:27:07.820+09:00|u_00418|POST /api/orders|499|1153ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T03:27:29.391+09:00|u_00403|GET /api/reports/daily|200|873ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T03:29:54.629+09:00|u_00402|POST /api/orders|200|1064ms|python-requests/2.32
+2026-08-03T03:30:04.242+09:00|u_00407|GET /api/orders/{id}|304|93ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T03:30:12.321+09:00|u_00403|GET /api/orders/{id}|201|1725ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T03:30:50.969+09:00|u_00400|POST /api/auth/login|201|819ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T03:31:05.194+09:00|u_00421|GET /api/orders/{id}|200|399ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T03:31:35.660+09:00|u_00423|PUT /api/inventory/{sku}|200|628ms|curl/8.7.1
+2026-08-03T03:31:38.664+09:00|u_00401|POST /api/orders|204|625ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T03:31:55.082+09:00|u_00402|GET /api/orders|400|1364ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T03:32:17.879+09:00|u_00400|PUT /api/inventory/{sku}|499|1617ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T03:33:32.220+09:00|u_00421|POST /api/orders|409|957ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T03:34:16.625+09:00|u_00421|GET /api/orders|409|154ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T03:34:47.890+09:00|u_00401|POST /api/orders|200|1644ms|GoogleBot/2.1 (+http://www.google.com/bot.html)
+2026-08-03T03:35:04.960+09:00|u_00401|GET /api/orders|200|1259ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T03:35:29.591+09:00|u_00421|GET /api/orders/{id}|201|898ms|curl/8.7.1
+2026-08-03T03:35:57.143+09:00|u_00401|DELETE /api/orders/{id}|204|455ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T03:37:01.095+09:00|u_00421|POST /api/auth/login|503|334ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T03:37:03.242+09:00|u_00407|GET /api/inventory|301|1351ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T03:37:13.321+09:00|u_00403|GET /api/inventory|204|1750ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T03:37:14.069+09:00|u_00401|GET /api/reports/daily|204|229ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T03:37:51.943+09:00|u_00403|POST /api/auth/login|201|1640ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T03:38:19.849+09:00|u_00417|POST /api/auth/login|302|1154ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T03:38:23.221+09:00|u_00420|PUT /api/inventory/{sku}|200|486ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T03:38:34.660+09:00|u_00423|PUT /api/inventory/{sku}|301|1142ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T03:38:40.335+09:00|u_00420|GET /api/reports/daily|204|1065ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T03:38:56.212+09:00|u_00423|DELETE /api/orders/{id}|400|595ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T03:39:00.937+09:00|u_00410|POST /api/auth/login|204|136ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T03:39:18.879+09:00|u_00400|PUT /api/inventory/{sku}|201|1070ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T03:39:25.849+09:00|u_00403|GET /api/orders|200|1723ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T03:42:05.698+09:00|u_00423|POST /api/auth/login|204|165ms|python-requests/2.32
+2026-08-03T03:42:16.655+09:00|u_00410|POST /api/orders|201|1365ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T03:42:27.240+09:00|u_00424|PUT /api/inventory/{sku}|204|137ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T03:43:11.274+09:00|u_00424|POST /api/auth/login|204|1592ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T03:43:56.917+09:00|u_00424|PUT /api/inventory/{sku}|204|9ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T03:44:00.095+09:00|u_00421|POST /api/auth/login|200|1745ms|python-requests/2.32
+2026-08-03T03:45:20.849+09:00|u_00417|GET /api/inventory|400|197ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T03:45:39.335+09:00|u_00420|DELETE /api/orders/{id}|200|1153ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T03:46:19.879+09:00|u_00400|DELETE /api/orders/{id}|201|1038ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T03:46:59.357+09:00|u_00420|POST /api/orders|201|99ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T03:48:00.641+09:00|u_00417|PUT /api/inventory/{sku}|200|1744ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T03:48:05.387+09:00|u_00407|GET /api/orders|302|1480ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T03:48:16.783+09:00|u_00400|GET /api/orders/{id}|204|1200ms|GoogleBot/2.1 (+http://www.google.com/bot.html)
+2026-08-03T03:48:46.632+09:00|u_00417|GET /api/orders|201|502ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T03:49:04.698+09:00|u_00423|POST /api/auth/login|200|1033ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T03:49:12.126+09:00|u_00417|GET /api/orders/{id}|204|685ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T03:49:15.655+09:00|u_00410|GET /api/inventory|201|1105ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T03:50:42.407+09:00|u_00407|GET /api/reports/daily|304|894ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T03:51:50.059+09:00|u_00407|GET /api/orders|301|890ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T03:52:11.944+09:00|u_00401|POST /api/auth/login|400|1419ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T03:52:12.719+09:00|u_00424|POST /api/auth/login|200|704ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T03:52:52.466+09:00|u_00407|GET /api/orders/{id}|201|908ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T03:54:00.357+09:00|u_00420|POST /api/orders|302|1093ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T03:54:10.733+09:00|u_00407|GET /api/orders/{id}|304|496ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T03:55:15.783+09:00|u_00400|GET /api/reports/daily|204|931ms|python-requests/2.32
+2026-08-03T03:56:02.744+09:00|u_00407|GET /api/inventory|404|963ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T03:56:03.698+09:00|u_00423|POST /api/auth/login|200|123ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T03:56:13.126+09:00|u_00417|GET /api/inventory|401|1238ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T03:56:16.655+09:00|u_00410|DELETE /api/orders/{id}|499|1040ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T03:56:49.939+09:00|u_00410|GET /api/inventory|200|1638ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T03:57:02.900+09:00|u_00400|GET /api/inventory|201|433ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T03:57:09.849+09:00|u_00414|GET /api/orders|302|1273ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T03:57:10.475+09:00|u_00420|GET /api/reports/daily|304|457ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T03:57:22.970+09:00|u_00406|GET /api/orders|499|662ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T03:57:57.435+09:00|u_00407|DELETE /api/orders/{id}|400|179ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T03:58:59.497+09:00|u_00409|GET /api/orders/{id}|499|547ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T03:59:07.746+09:00|u_00420|PUT /api/inventory/{sku}|404|1359ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T03:59:09.993+09:00|u_00414|GET /api/orders/{id}|201|932ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T03:59:12.944+09:00|u_00401|GET /api/inventory|200|920ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:00:15.586+09:00|u_00401|GET /api/orders|302|629ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T04:00:18.198+09:00|u_00414|DELETE /api/orders/{id}|200|1051ms|curl/8.7.1
+2026-08-03T04:01:35.838+09:00|u_00420|GET /api/orders/{id}|201|881ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T04:02:33.128+09:00|u_00417|GET /api/orders|200|50ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:02:33.328+09:00|u_00417|PUT /api/inventory/{sku}|200|19ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T04:02:33.528+09:00|u_00417|GET /api/orders|499|51ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T04:02:33.728+09:00|u_00417|GET /api/orders|200|27ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T04:03:12.126+09:00|u_00417|GET /api/orders|201|593ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T04:03:48.939+09:00|u_00410|POST /api/orders|201|126ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:04:03.900+09:00|u_00400|GET /api/orders/{id}|201|745ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T04:04:20.799+09:00|u_00412|DELETE /api/orders/{id}|201|386ms|python-requests/2.32
+2026-08-03T04:04:50.616+09:00|u_00410|PUT /api/inventory/{sku}|304|1038ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T04:04:58.435+09:00|u_00407|POST /api/orders|200|1032ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:05:21.766+09:00|u_00418|PUT /api/inventory/{sku}|201|412ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T04:05:41.469+09:00|u_00407|GET /api/reports/daily|201|252ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T04:06:18.851+09:00|u_00407|GET /api/orders/{id}|201|777ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:06:36.244+09:00|u_00418|GET /api/reports/daily|301|1591ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T04:07:14.586+09:00|u_00401|GET /api/orders/{id}|304|1003ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T04:07:25.837+09:00|u_00421|PUT /api/inventory/{sku}|204|1716ms|curl/8.7.1
+2026-08-03T04:08:36.838+09:00|u_00420|PUT /api/inventory/{sku}|201|44ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T04:10:13.126+09:00|u_00417|PUT /api/inventory/{sku}|204|1700ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T04:10:13.403+09:00|u_00401|GET /api/reports/daily|204|226ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T04:10:21.623+09:00|u_00417|POST /api/orders|204|652ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:11:02.900+09:00|u_00400|GET /api/reports/daily|204|670ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:11:11.429+09:00|u_00417|POST /api/orders|201|1772ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T04:11:19.073+09:00|u_00420|POST /api/auth/login|200|1119ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T04:11:19.799+09:00|u_00412|GET /api/inventory|204|1441ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T04:11:49.559+09:00|u_00412|DELETE /api/orders/{id}|200|691ms|curl/8.7.1
+2026-08-03T04:11:49.616+09:00|u_00410|PUT /api/inventory/{sku}|500|1175ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:11:53.567+09:00|u_00410|DELETE /api/orders/{id}|409|949ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:12:05.582+09:00|u_00420|PUT /api/inventory/{sku}|204|116ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:13:17.851+09:00|u_00407|POST /api/orders|200|518ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:13:44.646+09:00|u_00412|GET /api/reports/daily|304|829ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T04:14:16.570+09:00|u_00417|POST /api/auth/login|204|1052ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T04:14:26.837+09:00|u_00421|GET /api/orders|302|1635ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:14:29.676+09:00|u_00417|POST /api/auth/login|200|10ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T04:15:13.693+09:00|u_00417|PUT /api/inventory/{sku}|304|1385ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:16:02.612+09:00|u_00407|GET /api/reports/daily|204|368ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:16:25.824+09:00|u_00423|GET /api/orders/{id}|301|51ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:18:01.900+09:00|u_00400|DELETE /api/orders/{id}|204|1556ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T04:18:24.119+09:00|u_00423|GET /api/orders|204|990ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:18:48.775+09:00|u_00407|POST /api/orders|204|169ms|curl/8.7.1
+2026-08-03T04:18:52.567+09:00|u_00410|POST /api/orders|500|1049ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T04:19:06.582+09:00|u_00420|GET /api/orders/{id}|204|1697ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T04:20:14.433+09:00|u_00407|GET /api/orders/{id}|499|716ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T04:20:21.688+09:00|u_00407|GET /api/reports/daily|499|1436ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T04:21:03.416+09:00|u_00407|POST /api/orders|404|1160ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:21:20.107+09:00|u_00400|GET /api/orders|499|139ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T04:21:28.116+09:00|u_00423|POST /api/orders|404|186ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:21:45.480+09:00|u_00409|POST /api/auth/login|499|1547ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T04:22:00.867+09:00|u_00420|POST /api/auth/login|499|1314ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T04:22:29.153+09:00|u_00409|PUT /api/inventory/{sku}|201|820ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T04:22:56.103+09:00|u_00400|DELETE /api/orders/{id}|201|714ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:22:58.224+09:00|u_00420|PUT /api/inventory/{sku}|201|1739ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T04:23:18.619+09:00|u_00420|GET /api/orders|204|337ms|curl/8.7.1
+2026-08-03T04:24:42.042+09:00|u_00417|GET /api/reports/daily|400|325ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:24:51.360+09:00|u_00400|GET /api/orders|302|918ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T04:25:44.581+09:00|u_00409|POST /api/orders|200|710ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:25:46.028+09:00|u_00400|PUT /api/inventory/{sku}|200|767ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:25:53.567+09:00|u_00410|GET /api/inventory|200|1110ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T04:26:00.992+09:00|u_00409|DELETE /api/orders/{id}|200|1692ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T04:27:06.650+09:00|u_00408|GET /api/inventory|200|1062ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T04:27:34.545+09:00|u_00408|PUT /api/inventory/{sku}|200|1735ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T04:27:47.832+09:00|u_00417|DELETE /api/orders/{id}|200|1423ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T04:28:02.416+09:00|u_00407|POST /api/orders|409|1477ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T04:28:15.296+09:00|u_00417|GET /api/reports/daily|201|350ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:28:29.116+09:00|u_00423|GET /api/orders|304|1547ms|GoogleBot/2.1 (+http://www.google.com/bot.html)
+2026-08-03T04:28:37.819+09:00|u_00410|POST /api/orders|201|1369ms|python-requests/2.32
+2026-08-03T04:28:49.957+09:00|u_00409|DELETE /api/orders/{id}|499|970ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:29:17.112+09:00|u_00406|POST /api/auth/login|302|321ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:29:48.414+09:00|u_00407|GET /api/inventory|200|867ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T04:30:02.323+09:00|u_00406|GET /api/reports/daily|409|1452ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:30:06.748+09:00|u_00406|DELETE /api/orders/{id}|201|681ms|curl/8.7.1
+2026-08-03T04:31:03.138+09:00|u_00417|DELETE /api/orders/{id}|301|1445ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T04:31:11.143+09:00|u_00414|GET /api/inventory|201|378ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:32:09.659+09:00|u_00417|POST /api/auth/login|304|511ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T04:32:11.171+09:00|u_00407|GET /api/orders/{id}|500|249ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:32:54.468+09:00|u_00417|GET /api/orders|201|1627ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:33:44.042+09:00|u_00414|POST /api/orders|201|303ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:34:32.256+09:00|u_00407|PUT /api/inventory/{sku}|200|1519ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:35:13.554+09:00|u_00412|GET /api/orders|201|1127ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T04:37:53.371+09:00|u_00412|GET /api/orders/{id}|200|879ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:40:21.323+09:00|u_00412|GET /api/orders/{id}|302|1464ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T04:40:45.042+09:00|u_00414|PUT /api/inventory/{sku}|200|1012ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:41:22.680+09:00|u_00412|PUT /api/inventory/{sku}|201|1195ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:41:33.256+09:00|u_00407|GET /api/orders/{id}|201|274ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T04:42:17.496+09:00|u_00407|PUT /api/inventory/{sku}|201|1412ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:42:36.805+09:00|u_00423|GET /api/inventory|201|1232ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:42:38.329+09:00|u_00418|POST /api/auth/login|200|1476ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:42:43.760+09:00|u_00413|PUT /api/inventory/{sku}|201|1424ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T04:42:50.311+09:00|u_00413|GET /api/orders/{id}|301|1211ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T04:43:55.259+09:00|u_00423|GET /api/inventory|499|216ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T04:43:58.781+09:00|u_00412|POST /api/auth/login|302|1097ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T04:44:24.962+09:00|u_00407|GET /api/orders/{id}|200|658ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:44:47.060+09:00|u_00423|GET /api/inventory|304|1363ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T04:45:06.225+09:00|u_00423|PUT /api/inventory/{sku}|200|1402ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T04:45:08.392+09:00|u_00418|PUT /api/inventory/{sku}|499|571ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T04:45:12.174+09:00|u_00406|GET /api/orders/{id}|404|699ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T04:46:02.661+09:00|u_00400|GET /api/inventory|204|316ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T04:46:23.720+09:00|u_00421|PUT /api/inventory/{sku}|204|670ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:46:37.586+09:00|u_00418|POST /api/orders|201|843ms|GoogleBot/2.1 (+http://www.google.com/bot.html)
+2026-08-03T04:47:51.567+09:00|u_00423|GET /api/reports/daily|301|1439ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T04:48:03.179+09:00|u_00401|GET /api/reports/daily|204|553ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T04:48:33.246+09:00|u_00421|GET /api/reports/daily|499|1148ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T04:48:47.276+09:00|u_00418|GET /api/inventory|201|1745ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:49:10.307+09:00|u_00400|PUT /api/inventory/{sku}|301|1062ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T04:49:49.311+09:00|u_00413|DELETE /api/orders/{id}|200|1509ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:50:13.331+09:00|u_00418|POST /api/auth/login|302|861ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T04:50:20.530+09:00|u_00401|PUT /api/inventory/{sku}|304|1440ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:50:57.781+09:00|u_00412|DELETE /api/orders/{id}|200|1287ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T04:51:04.696+09:00|u_00400|POST /api/orders|204|772ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:51:07.175+09:00|u_00425|GET /api/orders/{id}|499|733ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T04:52:13.174+09:00|u_00406|GET /api/reports/daily|204|949ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:52:14.766+09:00|u_00418|GET /api/inventory|499|213ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T04:52:53.387+09:00|u_00401|GET /api/reports/daily|204|1706ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:53:10.988+09:00|u_00412|POST /api/auth/login|201|832ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T04:53:42.064+09:00|u_00401|GET /api/orders|201|634ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:54:17.465+09:00|u_00400|GET /api/reports/daily|201|701ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T04:55:06.925+09:00|u_00408|PUT /api/inventory/{sku}|301|1046ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T04:55:18.881+09:00|u_00406|GET /api/orders/{id}|204|1151ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:55:32.246+09:00|u_00421|GET /api/reports/daily|204|1113ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:55:32.697+09:00|u_00401|GET /api/orders|204|1035ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T04:55:40.228+09:00|u_00412|DELETE /api/orders/{id}|503|1680ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T04:56:05.048+09:00|u_00403|POST /api/auth/login|200|16ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T04:56:05.248+09:00|u_00403|GET /api/orders/{id}|200|46ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T04:56:05.448+09:00|u_00403|GET /api/reports/daily|200|7ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T04:56:05.648+09:00|u_00403|GET /api/inventory|200|41ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T04:57:17.815+09:00|u_00411|POST /api/orders|302|1800ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T04:58:03.139+09:00|u_00401|DELETE /api/orders/{id}|204|611ms|python-requests/2.32
+2026-08-03T04:58:08.175+09:00|u_00425|GET /api/orders|304|804ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T04:58:24.803+09:00|u_00421|POST /api/auth/login|499|531ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:59:15.766+09:00|u_00418|GET /api/orders/{id}|204|83ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:59:44.903+09:00|u_00423|PUT /api/inventory/{sku}|204|616ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:59:47.311+09:00|u_00425|GET /api/inventory|204|172ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:59:54.731+09:00|u_00421|GET /api/reports/daily|500|784ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T04:59:55.446+09:00|u_00411|POST /api/auth/login|201|31ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T05:00:12.052+09:00|u_00401|GET /api/orders/{id}|499|875ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T05:01:16.465+09:00|u_00400|POST /api/auth/login|503|1466ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T05:01:27.638+09:00|u_00400|GET /api/orders|204|1718ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T05:02:10.566+09:00|u_00425|POST /api/auth/login|200|872ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T05:03:31.889+09:00|u_00400|GET /api/inventory|200|119ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T05:03:35.134+09:00|u_00425|POST /api/auth/login|499|1610ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T05:04:18.675+09:00|u_00425|PUT /api/inventory/{sku}|200|1190ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T05:05:39.241+09:00|u_00425|GET /api/orders|204|1000ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T05:06:14.766+09:00|u_00418|GET /api/reports/daily|204|699ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T05:06:43.903+09:00|u_00423|PUT /api/inventory/{sku}|204|816ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T05:06:48.830+09:00|u_00400|GET /api/inventory|204|1174ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T05:07:05.433+09:00|u_00425|GET /api/inventory|499|600ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T05:08:16.702+09:00|u_00423|GET /api/inventory|204|987ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T05:08:36.571+09:00|u_00400|PUT /api/inventory/{sku}|200|94ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T05:10:58.240+09:00|u_00423|GET /api/orders/{id}|204|1298ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T05:12:59.649+09:00|u_00413|GET /api/reports/daily|200|1351ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T05:13:13.766+09:00|u_00418|GET /api/inventory|499|1311ms|GoogleBot/2.1 (+http://www.google.com/bot.html)
+2026-08-03T05:13:22.754+09:00|u_00414|POST /api/orders|401|739ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T05:13:36.458+09:00|u_00423|POST /api/auth/login|201|1638ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T05:13:54.023+09:00|u_00418|GET /api/orders|204|128ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T05:14:04.433+09:00|u_00425|GET /api/orders/{id}|201|1612ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T05:15:35.571+09:00|u_00400|POST /api/auth/login|499|1098ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T05:16:10.604+09:00|u_00423|POST /api/auth/login|201|1081ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T05:16:28.728+09:00|u_00418|GET /api/reports/daily|200|47ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T05:17:04.244+09:00|u_00425|GET /api/reports/daily|201|1318ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T05:17:13.978+09:00|u_00411|PUT /api/inventory/{sku}|200|1034ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T05:18:04.779+09:00|u_00416|GET /api/inventory|204|37ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T05:19:12.844+09:00|u_00416|DELETE /api/orders/{id}|201|436ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T05:20:16.914+09:00|u_00425|GET /api/inventory|200|719ms|python-requests/2.32
+2026-08-03T05:20:21.726+09:00|u_00401|GET /api/orders|302|1680ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T05:20:42.689+09:00|u_00401|PUT /api/inventory/{sku}|499|1623ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T05:20:50.880+09:00|u_00425|DELETE /api/orders/{id}|304|724ms|GoogleBot/2.1 (+http://www.google.com/bot.html)
+2026-08-03T05:23:11.604+09:00|u_00423|GET /api/inventory|304|745ms|python-requests/2.32
+2026-08-03T05:23:27.728+09:00|u_00418|DELETE /api/orders/{id}|204|1617ms|GoogleBot/2.1 (+http://www.google.com/bot.html)
+2026-08-03T05:23:58.270+09:00|u_00412|DELETE /api/orders/{id}|301|976ms|curl/8.7.1
+2026-08-03T05:24:01.672+09:00|u_00423|GET /api/orders|200|186ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T05:24:36.683+09:00|u_00423|GET /api/orders/{id}|200|143ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T05:26:13.844+09:00|u_00416|POST /api/orders|201|1308ms|curl/8.7.1
+2026-08-03T05:26:40.971+09:00|u_00418|DELETE /api/orders/{id}|204|36ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T05:26:57.015+09:00|u_00408|POST /api/auth/login|200|1149ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T05:27:43.689+09:00|u_00401|DELETE /api/orders/{id}|400|90ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T05:27:49.880+09:00|u_00425|GET /api/orders|200|272ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T05:28:51.752+09:00|u_00413|POST /api/auth/login|500|1301ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T05:29:00.143+09:00|u_00425|GET /api/reports/daily|400|1403ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T05:29:38.604+09:00|u_00413|GET /api/reports/daily|409|1066ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T05:30:01.408+09:00|u_00425|GET /api/inventory|499|416ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T05:30:57.270+09:00|u_00412|GET /api/orders|204|1481ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T05:31:35.683+09:00|u_00423|GET /api/reports/daily|302|284ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T05:32:06.104+09:00|u_00425|PUT /api/inventory/{sku}|499|1733ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T05:32:19.459+09:00|u_00413|POST /api/orders|499|828ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T05:32:45.305+09:00|u_00411|GET /api/reports/daily|204|1390ms|python-requests/2.32
+2026-08-03T05:33:12.844+09:00|u_00416|GET /api/orders/{id}|201|26ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T05:33:58.015+09:00|u_00408|DELETE /api/orders/{id}|204|1775ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T05:34:06.037+09:00|u_00412|GET /api/inventory|409|784ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T05:34:13.037+09:00|u_00411|GET /api/orders/{id}|201|1045ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T05:35:05.991+09:00|u_00413|DELETE /api/orders/{id}|204|545ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T05:36:59.228+09:00|u_00421|GET /api/orders|302|1778ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T05:38:36.683+09:00|u_00423|DELETE /api/orders/{id}|301|907ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T05:38:43.495+09:00|u_00421|GET /api/reports/daily|401|93ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T05:39:07.104+09:00|u_00425|DELETE /api/orders/{id}|200|1224ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T05:39:24.649+09:00|u_00425|GET /api/inventory|301|606ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T05:40:11.844+09:00|u_00416|POST /api/auth/login|401|1584ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T05:40:59.015+09:00|u_00408|POST /api/auth/login|200|924ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T05:41:07.037+09:00|u_00412|POST /api/auth/login|304|1791ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T05:42:52.058+09:00|u_00416|GET /api/orders/{id}|201|1765ms|curl/8.7.1
+2026-08-03T05:43:31.544+09:00|u_00412|GET /api/orders/{id}|304|1106ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T05:43:48.688+09:00|u_00408|DELETE /api/orders/{id}|204|240ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T05:45:37.683+09:00|u_00423|POST /api/auth/login|404|1262ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T05:45:42.495+09:00|u_00421|GET /api/reports/daily|301|609ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T05:45:49.071+09:00|u_00423|POST /api/auth/login|204|226ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T05:45:57.357+09:00|u_00412|DELETE /api/orders/{id}|499|945ms|python-requests/2.32
+2026-08-03T05:46:19.055+09:00|u_00421|GET /api/orders|204|1265ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T05:49:53.058+09:00|u_00416|GET /api/reports/daily|200|553ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T05:51:45.636+09:00|u_00416|GET /api/inventory|201|158ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T05:54:30.976+09:00|u_00422|PUT /api/inventory/{sku}|302|1572ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T05:55:10.746+09:00|u_00422|POST /api/orders|204|112ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T05:55:29.703+09:00|u_00404|GET /api/reports/daily|204|564ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T05:56:00.134+09:00|u_00404|PUT /api/inventory/{sku}|201|253ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T05:56:05.600+09:00|u_00422|GET /api/orders|503|44ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T05:56:13.230+09:00|u_00422|GET /api/inventory|401|1526ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T05:58:35.623+09:00|u_00404|PUT /api/inventory/{sku}|204|612ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T05:58:44.636+09:00|u_00416|PUT /api/inventory/{sku}|201|423ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T05:59:53.167+09:00|u_00404|DELETE /api/orders/{id}|204|134ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T06:00:13.187+09:00|u_00404|GET /api/inventory|200|446ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T06:00:29.106+09:00|u_00401|GET /api/orders/{id}|409|27ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T06:00:53.213+09:00|u_00416|POST /api/auth/login|204|1161ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T06:01:18.109+09:00|u_00401|DELETE /api/orders/{id}|200|1259ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T06:03:14.230+09:00|u_00422|POST /api/auth/login|302|638ms|GoogleBot/2.1 (+http://www.google.com/bot.html)
+2026-08-03T06:03:31.487+09:00|u_00422|PUT /api/inventory/{sku}|201|265ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T06:04:03.501+09:00|u_00411|GET /api/orders/{id}|200|1481ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T06:05:48.001+09:00|u_00422|GET /api/reports/daily|204|1101ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T06:07:14.187+09:00|u_00404|POST /api/orders|204|1036ms|curl/8.7.1
+2026-08-03T06:07:47.121+09:00|u_00422|DELETE /api/orders/{id}|301|1174ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T06:07:54.213+09:00|u_00416|PUT /api/inventory/{sku}|204|1474ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T06:08:17.206+09:00|u_00422|GET /api/inventory|200|163ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T06:08:59.442+09:00|u_00413|GET /api/orders/{id}|499|473ms|GoogleBot/2.1 (+http://www.google.com/bot.html)
+2026-08-03T06:09:12.600+09:00|u_00413|GET /api/inventory|201|1702ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T06:09:26.264+09:00|u_00416|GET /api/orders|201|737ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T06:10:48.153+09:00|u_00419|GET /api/reports/daily|201|96ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T06:11:04.501+09:00|u_00411|GET /api/orders/{id}|204|777ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T06:11:41.448+09:00|u_00408|POST /api/auth/login|201|161ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T06:14:13.187+09:00|u_00404|POST /api/orders|204|162ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T06:14:51.879+09:00|u_00408|PUT /api/inventory/{sku}|401|1566ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T06:15:05.479+09:00|u_00404|GET /api/inventory|302|1638ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T06:15:16.206+09:00|u_00422|DELETE /api/orders/{id}|204|543ms|curl/8.7.1
+2026-08-03T06:16:18.437+09:00|u_00421|POST /api/auth/login|409|272ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T06:16:25.264+09:00|u_00416|GET /api/orders/{id}|499|1629ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T06:16:53.234+09:00|u_00416|GET /api/orders/{id}|201|813ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T06:17:11.393+09:00|u_00401|GET /api/orders/{id}|200|1279ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T06:17:16.229+09:00|u_00413|DELETE /api/orders/{id}|201|883ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T06:17:32.108+09:00|u_00416|GET /api/reports/daily|304|1274ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T06:18:09.081+09:00|u_00421|DELETE /api/orders/{id}|200|214ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T06:20:00.970+09:00|u_00401|POST /api/orders|200|294ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T06:20:11.376+09:00|u_00413|DELETE /api/orders/{id}|404|1591ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T06:21:18.396+09:00|u_00412|GET /api/orders|302|61ms|python-requests/2.32
+2026-08-03T06:21:50.879+09:00|u_00408|GET /api/inventory|201|495ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T06:22:06.479+09:00|u_00404|GET /api/reports/daily|200|922ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T06:22:17.206+09:00|u_00422|GET /api/inventory|201|419ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T06:22:25.963+09:00|u_00413|GET /api/inventory|499|376ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T06:23:14.276+09:00|u_00412|DELETE /api/orders/{id}|204|424ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T06:23:21.683+09:00|u_00408|POST /api/auth/login|200|116ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T06:23:28.955+09:00|u_00422|DELETE /api/orders/{id}|400|1495ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T06:24:24.903+09:00|u_00419|GET /api/inventory|409|445ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T06:24:31.108+09:00|u_00416|GET /api/reports/daily|201|1393ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T06:24:52.878+09:00|u_00408|GET /api/orders|499|1000ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T06:26:01.498+09:00|u_00422|POST /api/orders|200|802ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T06:27:28.286+09:00|u_00416|GET /api/orders|499|799ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T06:29:03.342+09:00|u_00422|POST /api/orders|404|221ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T06:29:05.479+09:00|u_00404|GET /api/inventory|201|463ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T06:30:02.072+09:00|u_00416|GET /api/reports/daily|302|983ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T06:31:07.168+09:00|u_00404|DELETE /api/orders/{id}|499|1407ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T06:31:51.878+09:00|u_00408|PUT /api/inventory/{sku}|200|606ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T06:32:16.061+09:00|u_00404|DELETE /api/orders/{id}|401|508ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T06:36:04.342+09:00|u_00422|PUT /api/inventory/{sku}|404|1690ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T06:38:58.797+09:00|u_00416|PUT /api/inventory/{sku}|204|1688ms|curl/8.7.1
+2026-08-03T06:39:17.061+09:00|u_00404|DELETE /api/orders/{id}|404|88ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T06:43:05.342+09:00|u_00422|POST /api/orders|304|517ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T06:44:37.307+09:00|u_00422|DELETE /api/orders/{id}|201|1076ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T06:45:22.469+09:00|u_00421|GET /api/reports/daily|304|578ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T06:45:29.265+09:00|u_00412|GET /api/reports/daily|200|1499ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T06:47:00.402+09:00|u_00421|PUT /api/inventory/{sku}|500|1743ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T06:48:23.457+09:00|u_00411|GET /api/orders|204|1213ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T06:48:25.748+09:00|u_00421|GET /api/inventory|204|1656ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T06:49:49.453+09:00|u_00419|POST /api/orders|201|482ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T06:51:55.512+09:00|u_00408|GET /api/inventory|201|95ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T06:52:28.265+09:00|u_00412|PUT /api/inventory/{sku}|201|1140ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T06:53:30.083+09:00|u_00408|GET /api/reports/daily|204|891ms|GoogleBot/2.1 (+http://www.google.com/bot.html)
+2026-08-03T06:54:24.378+09:00|u_00412|GET /api/orders/{id}|204|503ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T06:55:24.457+09:00|u_00411|GET /api/inventory|302|1696ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T06:55:26.748+09:00|u_00421|PUT /api/inventory/{sku}|201|495ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T06:56:06.338+09:00|u_00408|GET /api/orders|499|1009ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T06:56:29.919+09:00|u_00421|POST /api/auth/login|200|1096ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T06:56:50.453+09:00|u_00419|GET /api/orders/{id}|201|51ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T06:57:00.017+09:00|u_00419|GET /api/inventory|204|1275ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T07:00:01.059+09:00|u_00413|GET /api/reports/daily|201|47ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T07:01:25.378+09:00|u_00412|DELETE /api/orders/{id}|201|1060ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T07:02:25.457+09:00|u_00411|GET /api/orders|201|1371ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T07:03:07.338+09:00|u_00408|POST /api/orders|204|1618ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T07:03:25.621+09:00|u_00408|GET /api/reports/daily|201|1639ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T07:03:30.919+09:00|u_00421|GET /api/orders|304|1047ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T07:07:00.059+09:00|u_00413|GET /api/orders/{id}|499|1468ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T07:08:06.114+09:00|u_00413|POST /api/orders|200|1431ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T07:08:24.378+09:00|u_00412|POST /api/orders|301|489ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T07:09:24.457+09:00|u_00411|GET /api/orders|201|1119ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T07:09:56.057+09:00|u_00411|GET /api/orders|499|1370ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T07:11:33.779+09:00|u_00412|GET /api/orders/{id}|499|1343ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T07:13:00.823+09:00|u_00412|GET /api/reports/daily|404|1154ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T07:14:56.711+09:00|u_00416|PUT /api/inventory/{sku}|201|1454ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T07:15:46.156+09:00|u_00412|GET /api/orders|302|710ms|python-requests/2.32
+2026-08-03T07:16:57.057+09:00|u_00411|GET /api/orders|500|425ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T07:19:36.838+09:00|u_00422|POST /api/orders|401|1045ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T07:21:55.624+09:00|u_00422|POST /api/orders|499|1214ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T07:21:55.711+09:00|u_00416|GET /api/orders|499|1497ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T07:24:54.496+09:00|u_00413|POST /api/auth/login|499|1108ms|GoogleBot/2.1 (+http://www.google.com/bot.html)
+2026-08-03T07:25:04.541+09:00|u_00422|GET /api/inventory|204|376ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T07:28:56.711+09:00|u_00416|GET /api/inventory|201|279ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T07:33:18.316+09:00|u_00419|POST /api/orders|201|506ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T07:33:55.103+09:00|u_00419|POST /api/orders|204|141ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T07:35:57.711+09:00|u_00416|POST /api/auth/login|503|1289ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T07:37:33.503+09:00|u_00416|DELETE /api/orders/{id}|204|1244ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T07:38:03.325+09:00|u_00416|GET /api/orders/{id}|204|1310ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T07:40:56.103+09:00|u_00419|DELETE /api/orders/{id}|201|515ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T07:42:44.871+09:00|u_00419|PUT /api/inventory/{sku}|204|764ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T07:45:25.050+09:00|u_00419|GET /api/orders/{id}|503|678ms|Mozilla/5.0 (Windows NT 10.0; Win64; x64) Chrome/141.0
+2026-08-03T08:18:01.674+09:00|u_00416|DELETE /api/orders/{id}|201|475ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T08:26:47.043+09:00|u_00416|GET /api/reports/daily|201|1703ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T08:33:46.043+09:00|u_00416|GET /api/orders/{id}|204|259ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T08:35:41.848+09:00|u_00416|GET /api/orders|404|227ms|curl/8.7.1
+2026-08-03T08:38:08.529+09:00|u_00416|GET /api/orders|204|139ms|Mozilla/5.0 (X11; Linux x86_64) Firefox/135.0
+2026-08-03T08:39:10.950+09:00|u_00416|PUT /api/inventory/{sku}|499|1321ms|python-requests/2.32
+2026-08-03T08:40:14.974+09:00|u_00416|PUT /api/inventory/{sku}|200|299ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T08:40:23.932+09:00|u_00416|POST /api/orders|304|695ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0
+2026-08-03T08:40:56.358+09:00|u_00416|PUT /api/inventory/{sku}|204|353ms|python-requests/2.32
+2026-08-03T08:42:13.043+09:00|u_00416|GET /api/inventory|201|607ms|Mozilla/5.0 (Macintosh; Intel Mac OS X 14_5) Safari/18.0

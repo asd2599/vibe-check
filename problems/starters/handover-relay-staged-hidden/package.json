@@ -1,0 +1,9 @@
+{
+  "name": "handover-relay-staged-workspace",
+  "private": true,
+  "version": "0.0.0",
+  "description": "인수인계 작업 워크스페이스",
+  "scripts": {
+    "test": "node --test tests/*.test.js"
+  }
+}

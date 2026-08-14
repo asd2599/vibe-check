@@ -1,0 +1,142 @@
+{
+  "width": 8,
+  "height": 8,
+  "terrain": [
+    [
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain"
+    ],
+    [
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain"
+    ],
+    [
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "wall",
+      "plain",
+      "plain"
+    ],
+    [
+      "plain",
+      "plain",
+      "plain",
+      "forest",
+      "plain",
+      "plain",
+      "plain",
+      "plain"
+    ],
+    [
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "forest",
+      "plain",
+      "plain",
+      "plain"
+    ],
+    [
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain"
+    ],
+    [
+      "plain",
+      "plain",
+      "water",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain"
+    ],
+    [
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain",
+      "plain"
+    ]
+  ],
+  "units": [
+    {
+      "id": "a1",
+      "team": "ally",
+      "x": 1,
+      "y": 6,
+      "hp": 48,
+      "maxHp": 48,
+      "atk": 12,
+      "def": 5,
+      "spd": 7,
+      "move": 4,
+      "range": 1,
+      "venom": true
+    },
+    {
+      "id": "a2",
+      "team": "ally",
+      "x": 2,
+      "y": 1,
+      "hp": 40,
+      "maxHp": 40,
+      "atk": 11,
+      "def": 7,
+      "spd": 5,
+      "move": 3,
+      "range": 2
+    },
+    {
+      "id": "e1",
+      "team": "enemy",
+      "x": 6,
+      "y": 6,
+      "hp": 46,
+      "maxHp": 46,
+      "atk": 13,
+      "def": 6,
+      "spd": 7,
+      "move": 4,
+      "range": 1,
+      "venom": true
+    },
+    {
+      "id": "e2",
+      "team": "enemy",
+      "x": 6,
+      "y": 1,
+      "hp": 42,
+      "maxHp": 42,
+      "atk": 10,
+      "def": 4,
+      "spd": 5,
+      "move": 3,
+      "range": 2
+    }
+  ]
+}

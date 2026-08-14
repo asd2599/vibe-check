@@ -1,0 +1,9 @@
+{
+  "name": "csv-summarizer-staged-workspace",
+  "private": true,
+  "version": "0.0.0",
+  "description": "매출 CSV 합산기 워크스페이스 (node summarize.js <파일경로>)",
+  "scripts": {
+    "test": "node --test tests/*.test.js"
+  }
+}

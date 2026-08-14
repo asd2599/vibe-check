@@ -1,0 +1,5 @@
+date,amount,memo
+2024-01-03,"1,250","점심, 회식비"
+2024-01-04,300,"escaped ""quote"" test"
+2024-01-05,"75.5","normal"
+2024-01-06,"2,000.5","year-end bonus, dept A"

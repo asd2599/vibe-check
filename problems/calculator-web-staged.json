@@ -1,0 +1,66 @@
+{
+  "id": "calculator-web-staged",
+  "title": "웹 계산기 (워밍업 · 단계별 확인)",
+  "difficulty": "easy",
+  "category": "warmup",
+  "listOrder": 1,
+  "prompt": "[슬랙 DM - 이대리]\n어? 페이지는 잘 뜨네요 👍 여기다 계산기 하나 만들어 주실 수 있어요?\n숫자 버튼 눌러서 계산되는 거요. 일단 그거부터 부탁해요!\n\n아 참고로 워크스페이스에 정적 서버가 이미 떠 있어요 (혹시 꺼지면 `npm start` 로 다시 띄우시면 돼요). 화면은 `index.html` 이고요.\n계산 로직만 `calc.js` 의 `evaluate()` 안에 넣어주세요 — 저희가 나중에 그 함수만 따로 돌려볼 거라서요. 화면 코드가 거기 섞이지만 않으면 됩니다.\n\n그리고 저희 QA 스크립트가 화면도 자동으로 눌러보거든요 😅 디자인은 마음대로 하셔도 되는데 이 두 가지만 맞춰주세요:\n- 계산 결과는 `id=\"result\"` 인 요소 안에 **값만** 텍스트로 보여주기 (지금 화면에 자리 잡아뒀어요)\n- 버튼마다 `data-key` 속성 달기 — 숫자는 `data-key=\"7\"` 처럼, 소수점은 `.`, 연산자는 `+` `-` `*` `/`, 등호는 `=`, 전체 지우기는 `clear`\n\n쓰다 보면 몇 가지 더 여쭤볼 것 같은데, 그때그때 하나씩 확인 부탁드릴게요 🙏",
+  "starterFiles": "problems/starters/calculator-web-staged",
+  "autoStartCommand": "npm start",
+  "testCommand": "node --test tests/final.test.js tests/ui.test.js",
+  "hiddenTestsPath": "problems/starters/calculator-web-staged-hidden",
+  "rubric": [
+    "버튼 클릭(마우스)과 키보드 입력이 둘 다 동작하도록 구성됐는가",
+    "계산 로직(calc.js)과 화면(index.html)이 뒤섞이지 않고 분리돼 있는가",
+    "코드 가독성"
+  ],
+  "maxCostUsd": 3.0,
+  "maxTokens": 6000000,
+  "referenceWeightedTokens": 1200000,
+  "maxDurationMs": 1200000,
+  "targetDurationMs": 600000,
+  "stages": [
+    {
+      "index": 1,
+      "title": "1단계 게이트 (내부용, 화면에 노출되지 않음)",
+      "promptAddition": "",
+      "unlockPath": null,
+      "gateTestCommand": "node -e \"\""
+    },
+    {
+      "index": 2,
+      "title": "2단계: 키보드 입력",
+      "promptAddition": "오 잘 되네요! 아 그리고요, 버튼 말고 **키보드로도** 숫자랑 연산자 입력되면 좋겠어요. 마우스 잘 안 쓰는 분들이 있어서요 🙏",
+      "unlockPath": null,
+      "gateTestCommand": "node -e \"\""
+    },
+    {
+      "index": 3,
+      "title": "3단계: 괄호",
+      "promptAddition": "괄호 넣은 식도 계산돼요? `(2+3)×4` 같은 거요.\n아 그리고 괄호 없을 때는 `2+3×4` 처럼 곱셈/나눗셈이 먼저 계산돼야 하고요!\n괄호 버튼에도 `data-key` 부탁드려요 — `(` 와 `)` 로요.",
+      "unlockPath": null,
+      "gateTestCommand": "node -e \"\""
+    },
+    {
+      "index": 4,
+      "title": "4단계: 0으로 나누기",
+      "promptAddition": "0으로 나누면 어떻게 나와요? 이상한 값 말고 그냥 `Error` 라고 떠주면 좋겠네요.\n실수로 이상한 식(`2+*3` 이라든가 괄호 안 닫은 거)이 들어가도 똑같이 `Error` 로 부탁해요.",
+      "unlockPath": null,
+      "gateTestCommand": "node -e \"\""
+    },
+    {
+      "index": 5,
+      "title": "5단계: 소수점 정리",
+      "promptAddition": "0.1+0.2 같은 것도 `0.3` 으로 깔끔하게 나오죠? 지저분한 소수점 나오면 안 돼요 😅\n8/4 같은 것도 그냥 `2` 로요 (`2.0` 말고요).",
+      "unlockPath": null,
+      "gateTestCommand": "node -e \"\""
+    },
+    {
+      "index": 6,
+      "title": "6단계: 나머지·루트·로그",
+      "promptAddition": "마지막으로 나머지 연산이랑 루트·로그도 되면 좋겠어요!\n표기는 `7%3`, `sqrt(9)`, `log(100)` 이렇게 쓸게요. 로그는 상용로그(log10)로요.\n나머지 버튼도 `data-key=\"%\"` 로 달아주시고요.\n아, 루트 안에 음수 넣거나 로그에 0 이하 넣으면 그것도 `Error` 로 부탁해요. 이것까지 되면 끝이에요, 고생하셨습니다!",
+      "unlockPath": null,
+      "gateTestCommand": "node -e \"\""
+    }
+  ]
+}

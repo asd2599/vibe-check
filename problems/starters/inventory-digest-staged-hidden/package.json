@@ -1,0 +1,9 @@
+{
+  "name": "inventory-digest-staged-workspace",
+  "private": true,
+  "version": "0.0.0",
+  "description": "재고 리포트 자동화 워크스페이스 (node report.js <파일경로>)",
+  "scripts": {
+    "test": "node --test tests/*.test.js"
+  }
+}
